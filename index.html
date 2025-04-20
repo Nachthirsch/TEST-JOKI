@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MonicaWorld – Organic Fertilizer</title>
+    <!-- Tailwind CSS via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="font-sans">
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress"></div>
+
+    <!-- Header/Navigation -->
+    <header id="header" class="fixed w-full z-50 transition-all duration-300 bg-transparent backdrop-filter backdrop-blur-0 hover:backdrop-blur-sm">
+      <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <div class="flex items-center space-x-2">
+          <h1 class="text-lg md:text-xl font-bold text-white tracking-wide">Monica<span class="text-primary-green">World</span></h1>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none bg-white/10 hover:bg-white/20 rounded-lg p-2 transition-all duration-300">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex space-x-6">
+          <a href="#home" class="nav-link active group relative text-white font-medium py-2 px-3 transition-all duration-300 hover:text-primary-green rounded-lg hover:bg-white/10">
+            <span class="flex items-center"><i class="fas fa-home mr-1.5 text-xs"></i> Home</span>
+            <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-primary-green transition-all duration-300 ease-out group-hover:w-3/4"></span>
+          </a>
+          <a href="#about" class="nav-link group relative text-white font-medium py-2 px-3 transition-all duration-300 hover:text-primary-green rounded-lg hover:bg-white/10">
+            <span class="flex items-center"><i class="fas fa-info-circle mr-1.5 text-xs"></i> About Us</span>
+            <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-primary-green transition-all duration-300 ease-out group-hover:w-3/4"></span>
+          </a>
+          <a href="#products" class="nav-link group relative text-white font-medium py-2 px-3 transition-all duration-300 hover:text-primary-green rounded-lg hover:bg-white/10">
+            <span class="flex items-center"><i class="fas fa-leaf mr-1.5 text-xs"></i> Products</span>
+            <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-primary-green transition-all duration-300 ease-out group-hover:w-3/4"></span>
+          </a>
+          <a href="#gallery" class="nav-link group relative text-white font-medium py-2 px-3 transition-all duration-300 hover:text-primary-green rounded-lg hover:bg-white/10">
+            <span class="flex items-center"><i class="fas fa-images mr-1.5 text-xs"></i> Gallery</span>
+            <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-primary-green transition-all duration-300 ease-out group-hover:w-3/4"></span>
+          </a>
+          <a href="#testimonials" class="nav-link group relative text-white font-medium py-2 px-3 transition-all duration-300 hover:text-primary-green rounded-lg hover:bg-white/10">
+            <span class="flex items-center"><i class="fas fa-quote-left mr-1.5 text-xs"></i> Testimonials</span>
+            <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-primary-green transition-all duration-300 ease-out group-hover:w-3/4"></span>
+          </a>
+          <a href="#contact" class="nav-link group relative text-white font-medium py-2 px-3 transition-all duration-300 hover:text-primary-green rounded-lg hover:bg-white/10">
+            <span class="flex items-center"><i class="fas fa-envelope mr-1.5 text-xs"></i> Contact</span>
+            <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-primary-green transition-all duration-300 ease-out group-hover:w-3/4"></span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Mobile Navigation Menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg w-full">
+        <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+          <a href="#home" class="mobile-link flex items-center space-x-3 text-primary-green hover:text-primary-brown transition-colors p-2 border-l-4 border-transparent hover:border-primary-green rounded hover:bg-gray-50">
+            <i class="fas fa-home text-sm"></i>
+            <span>Home</span>
+          </a>
+          <a href="#about" class="mobile-link flex items-center space-x-3 text-primary-green hover:text-primary-brown transition-colors p-2 border-l-4 border-transparent hover:border-primary-green rounded hover:bg-gray-50">
+            <i class="fas fa-info-circle text-sm"></i>
+            <span>About Us</span>
+          </a>
+          <a href="#products" class="mobile-link flex items-center space-x-3 text-primary-green hover:text-primary-brown transition-colors p-2 border-l-4 border-transparent hover:border-primary-green rounded hover:bg-gray-50">
+            <i class="fas fa-leaf text-sm"></i>
+            <span>Products</span>
+          </a>
+          <a href="#gallery" class="mobile-link flex items-center space-x-3 text-primary-green hover:text-primary-brown transition-colors p-2 border-l-4 border-transparent hover:border-primary-green rounded hover:bg-gray-50">
+            <i class="fas fa-images text-sm"></i>
+            <span>Gallery</span>
+          </a>
+          <a href="#testimonials" class="mobile-link flex items-center space-x-3 text-primary-green hover:text-primary-brown transition-colors p-2 border-l-4 border-transparent hover:border-primary-green rounded hover:bg-gray-50">
+            <i class="fas fa-quote-left text-sm"></i>
+            <span>Testimonials</span>
+          </a>
+          <a href="#contact" class="mobile-link flex items-center space-x-3 text-primary-green hover:text-primary-brown transition-colors p-2 border-l-4 border-transparent hover:border-primary-green rounded hover:bg-gray-50">
+            <i class="fas fa-envelope text-sm"></i>
+            <span>Contact</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="min-h-screen flex items-center relative">
+      <!-- Hero Background Image -->
+      <div class="absolute inset-0 bg-cover bg-center z-0" style="background-image: url('https://images.unsplash.com/photo-1464226184884-fa280b87c399?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80')">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+      </div>
+
+      <div class="container mx-auto px-4 z-10 text-center md:text-left md:ml-16">
+        <h1 class="text-3xl md:text-5xl font-bold text-white mb-4">MonicaWorld Organic Fertilizer</h1>
+        <p class="text-xl md:text-2xl text-white mb-8 max-w-2xl">Nurturing soil for a sustainable future. Premium organic solutions for your crops.</p>
+        <a href="#products" class="bg-primary-green hover:bg-opacity-90 text-white font-bold py-3 px-8 rounded-lg transition transform hover:scale-105 inline-block"> View Products </a>
+      </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20 bg-gray-50 relative overflow-hidden">
+      <!-- Decorative elements -->
+      <div class="absolute top-0 right-0 w-64 h-64 bg-primary-green opacity-5 rounded-full -mr-32 -mt-32"></div>
+      <div class="absolute bottom-0 left-0 w-64 h-64 bg-primary-brown opacity-5 rounded-full -ml-32 -mb-32"></div>
+
+      <div class="container mx-auto px-20">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-primary-green mb-4 inline-block relative">
+            About Us
+            <span class="absolute bottom-0 left-0 w-full h-1 bg-primary-brown opacity-30 rounded"></span>
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">Learn about our journey and commitment to sustainable organic farming solutions.</p>
+        </div>
+
+        <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+          <div class="md:w-1/2 group">
+            <div class="relative overflow-hidden rounded-xl shadow-xl">
+              <img src="https://images.unsplash.com/photo-1500269526654-e9e6cafd6234?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80" alt="Our Factory" class="w-full h-full object-cover rounded-xl transform transition-transform duration-500 group-hover:scale-105" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+          </div>
+
+          <div class="md:w-1/2 mt-8 md:mt-0">
+            <h3 class="text-2xl md:text-3xl font-semibold mb-6 text-primary-brown">Our Story</h3>
+            <p class="text-gray-700 mb-5 leading-relaxed">Founded in 2010, MonicaWorld has been at the forefront of organic fertilizer production in the region. What started as a small family business has grown into a trusted name in sustainable agriculture.</p>
+            <p class="text-gray-700 mb-5 leading-relaxed">Our mission is to provide farmers and gardeners with high-quality organic fertilizers that enhance soil health and productivity without harmful chemicals. We believe in working with nature, not against it.</p>
+            <p class="text-gray-700 mb-6 leading-relaxed">Every batch of our fertilizer is crafted with care, using locally sourced organic materials and implementing rigorous quality control standards. Our production facility combines traditional knowledge with modern technology to create products that deliver results.</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 mt-8 bg-white p-6 rounded-lg shadow-md">
+              <div class="text-center transform transition-all duration-300 hover:-translate-y-1 py-3">
+                <span class="block text-3xl md:text-4xl font-bold text-primary-green mb-2">12+</span>
+                <span class="text-gray-600 text-sm">Years Experience</span>
+              </div>
+              <div class="text-center transform transition-all duration-300 hover:-translate-y-1 py-3">
+                <span class="block text-3xl md:text-4xl font-bold text-primary-green mb-2">10k+</span>
+                <span class="text-gray-600 text-sm">Happy Customers</span>
+              </div>
+              <div class="text-center transform transition-all duration-300 hover:-translate-y-1 py-3">
+                <span class="block text-3xl md:text-4xl font-bold text-primary-green mb-2">100%</span>
+                <span class="text-gray-600 text-sm">Organic</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 bg-gradient-to-b from-white to-gray-50 relative">
+      <!-- Decorative Background Elements -->
+      <div class="container mx-auto px-20 relative z-10">
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-primary-green mb-4 inline-block relative">
+            Our Products
+            <span class="absolute bottom-0 left-0 w-full h-1 bg-primary-brown opacity-30 rounded"></span>
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">Discover our premium organic fertilizers, crafted with care to enhance soil health and promote sustainable agriculture.</p>
+        </div>
+
+        <!-- Products Container -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12">
+          <!-- 5kg Product Card -->
+          <div class="bg-white rounded-xl overflow-hidden shadow-lg transform transition duration-300 hover:-translate-y-2 hover:shadow-xl product-shine">
+            <div class="relative">
+              <img src="https://images.unsplash.com/photo-1598966565560-daf4995aecba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80" alt="Organic Fertilizer 5kg" class="w-full h-64 object-cover" />
+              <div class="absolute top-4 right-4 bg-primary-green text-white px-3 py-1 rounded-full text-sm font-medium">Bestseller</div>
+            </div>
+
+            <div class="p-6 md:p-8 border-t border-gray-100">
+              <div class="flex items-center mb-2">
+                <h3 class="text-xl md:text-2xl font-semibold text-primary-brown">Organic Fertilizer - 5kg</h3>
+                <span class="ml-auto bg-gray-100 text-primary-green font-bold py-1 px-3 rounded-lg">Rp 75.000</span>
+              </div>
+
+              <div class="flex items-center mb-4 text-sm text-gray-500">
+                <span class="flex items-center mr-4"><i class="fas fa-leaf mr-1 text-primary-green"></i> 100% Organic</span>
+                <span class="flex items-center"><i class="fas fa-box mr-1 text-primary-green"></i> 5kg Package</span>
+              </div>
+
+              <p class="text-gray-600 mb-6">Our 5kg package is perfect for small gardens and plant enthusiasts. This all-purpose organic fertilizer improves soil structure, enhances nutrient content, and promotes healthy plant growth.</p>
+
+              <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                  <div class="flex">
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star-half-alt text-yellow-400"></i>
+                  </div>
+                  <span class="text-sm text-gray-500 ml-2">4.8/5</span>
+                </div>
+                <button class="bg-primary-brown hover:bg-opacity-90 text-white py-2 px-6 rounded-lg transition transform hover:scale-105 flex items-center"><i class="fas fa-shopping-cart mr-2"></i> Order Now</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 10kg Product Card -->
+          <div class="bg-white rounded-xl overflow-hidden shadow-lg transform transition duration-300 hover:-translate-y-2 hover:shadow-xl product-shine">
+            <div class="relative">
+              <img src="https://images.unsplash.com/photo-1622383563227-04c6a28682f5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80" alt="Organic Fertilizer 10kg" class="w-full h-64 object-cover" />
+              <div class="absolute top-4 right-4 bg-primary-brown text-white px-3 py-1 rounded-full text-sm font-medium">Best Value</div>
+            </div>
+
+            <div class="p-6 md:p-8 border-t border-gray-100">
+              <div class="flex items-center mb-2">
+                <h3 class="text-xl md:text-2xl font-semibold text-primary-brown">Organic Fertilizer - 10kg</h3>
+                <span class="ml-auto bg-gray-100 text-primary-green font-bold py-1 px-3 rounded-lg">Rp 140.000</span>
+              </div>
+
+              <div class="flex items-center mb-4 text-sm text-gray-500">
+                <span class="flex items-center mr-4"><i class="fas fa-leaf mr-1 text-primary-green"></i> 100% Organic</span>
+                <span class="flex items-center"><i class="fas fa-box mr-1 text-primary-green"></i> 10kg Package</span>
+              </div>
+
+              <p class="text-gray-600 mb-6">Our larger 10kg package is ideal for serious gardeners and small-scale farmers. This premium blend provides extended nutrient release and promotes microbial activity for long-term soil health.</p>
+
+              <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                  <div class="flex">
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                  </div>
+                  <span class="text-sm text-gray-500 ml-2">5.0/5</span>
+                </div>
+                <button class="bg-primary-brown hover:bg-opacity-90 text-white py-2 px-6 rounded-lg transition transform hover:scale-105 flex items-center"><i class="fas fa-shopping-cart mr-2"></i> Order Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Benefits Section -->
+        <div class="mt-16 bg-white rounded-xl shadow-md p-8 md:p-10">
+          <h3 class="text-xl font-semibold text-primary-green mb-6 text-center">Why Choose Our Organic Fertilizers?</h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Benefit 1 -->
+            <div class="flex flex-col items-center text-center p-4 rounded-lg hover:bg-gray-50 transition">
+              <div class="w-16 h-16 bg-primary-green bg-opacity-10 rounded-full flex items-center justify-center mb-4">
+                <i class="fas fa-seedling text-2xl text-primary-green"></i>
+              </div>
+              <h4 class="font-medium text-gray-800 mb-2">Enhances Growth</h4>
+              <p class="text-gray-600 text-sm">Promotes robust plant growth and increases crop yields naturally.</p>
+            </div>
+
+            <!-- Benefit 2 -->
+            <div class="flex flex-col items-center text-center p-4 rounded-lg hover:bg-gray-50 transition">
+              <div class="w-16 h-16 bg-primary-green bg-opacity-10 rounded-full flex items-center justify-center mb-4">
+                <i class="fas fa-globe-americas text-2xl text-primary-green"></i>
+              </div>
+              <h4 class="font-medium text-gray-800 mb-2">Eco-Friendly</h4>
+              <p class="text-gray-600 text-sm">100% organic ingredients that are safe for the environment and wildlife.</p>
+            </div>
+
+            <!-- Benefit 3 -->
+            <div class="flex flex-col items-center text-center p-4 rounded-lg hover:bg-gray-50 transition">
+              <div class="w-16 h-16 bg-primary-green bg-opacity-10 rounded-full flex items-center justify-center mb-4">
+                <i class="fas fa-hand-holding-heart text-2xl text-primary-green"></i>
+              </div>
+              <h4 class="font-medium text-gray-800 mb-2">Long-lasting</h4>
+              <p class="text-gray-600 text-sm">Slow-release formula provides nutrients over an extended period.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-20">
+        <h2 class="text-3xl font-bold text-center mb-12 text-primary-green">Gallery</h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <!-- Gallery Images -->
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80" alt="Production Process" class="w-full h-64 object-cover rounded-lg cursor-pointer shadow-md hover:shadow-lg transition" />
+          </div>
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1594060588450-f0e0ae1d3047?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80" alt="Raw Materials" class="w-full h-64 object-cover rounded-lg cursor-pointer shadow-md hover:shadow-lg transition" />
+          </div>
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80" alt="Packaging Process" class="w-full h-64 object-cover rounded-lg cursor-pointer shadow-md hover:shadow-lg transition" />
+          </div>
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1492496913980-501348b61469?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80" alt="Farm Results" class="w-full h-64 object-cover rounded-lg cursor-pointer shadow-md hover:shadow-lg transition" />
+          </div>
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1557234195-bd9f290f0e4d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80" alt="Testing Lab" class="w-full h-64 object-cover rounded-lg cursor-pointer shadow-md hover:shadow-lg transition" />
+          </div>
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1497990571654-77aa8077a7c0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80" alt="Product Results" class="w-full h-64 object-cover rounded-lg cursor-pointer shadow-md hover:shadow-lg transition" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Lightbox Overlay -->
+      <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 hidden">
+        <button id="close-lightbox" class="absolute top-4 right-4 text-white text-2xl">&times;</button>
+        <button id="prev-image" class="absolute left-4 text-white text-2xl">&lt;</button>
+        <button id="next-image" class="absolute right-4 text-white text-2xl">&gt;</button>
+        <img id="lightbox-img" src="" alt="Enlarged gallery image" class="max-h-[80vh] max-w-[80vw]" />
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-white">
+      <div class="container mx-auto px-20">
+        <h2 class="text-3xl font-bold text-center mb-12 text-primary-green">Testimonials</h2>
+
+        <div class="relative overflow-hidden">
+          <div id="testimonial-slider" class="flex transition-transform duration-500">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-slide w-full flex-shrink-0 px-4">
+              <div class="bg-gray-50 rounded-lg p-8 shadow-md">
+                <div class="flex items-center mb-4">
+                  <div class="text-primary-green text-4xl mr-4">
+                    <i class="fas fa-quote-left"></i>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-6 italic">"MonicaWorld's organic fertilizer has transformed my vegetable garden. The growth is incredible, and my plants have never looked healthier. I appreciate that it's completely organic and safe for my family and the environment."</p>
+                <div class="flex items-center">
+                  <div class="mr-4 h-12 w-12 bg-primary-brown rounded-full flex items-center justify-center text-white text-xl">
+                    <span>SJ</span>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-primary-brown">Sarah Johnson</h4>
+                    <p class="text-gray-600 text-sm">Home Gardener</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="testimonial-slide w-full flex-shrink-0 px-4">
+              <div class="bg-gray-50 rounded-lg p-8 shadow-md">
+                <div class="flex items-center mb-4">
+                  <div class="text-primary-green text-4xl mr-4">
+                    <i class="fas fa-quote-left"></i>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-6 italic">"As a commercial farmer, I've tried many fertilizers over the years. MonicaWorld offers exceptional quality that has consistently improved my crop yields. The soil health benefits are noticeable after just one season of use."</p>
+                <div class="flex items-center">
+                  <div class="mr-4 h-12 w-12 bg-primary-brown rounded-full flex items-center justify-center text-white text-xl">
+                    <span>RM</span>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-primary-brown">Robert Martinez</h4>
+                    <p class="text-gray-600 text-sm">Commercial Farmer</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="testimonial-slide w-full flex-shrink-0 px-4">
+              <div class="bg-gray-50 rounded-lg p-8 shadow-md">
+                <div class="flex items-center mb-4">
+                  <div class="text-primary-green text-4xl mr-4">
+                    <i class="fas fa-quote-left"></i>
+                  </div>
+                </div>
+                <p class="text-gray-700 mb-6 italic">"I run a small organic farm and MonicaWorld has been our trusted fertilizer supplier for years. Their product is consistent, effective, and truly organic. Their customer service and delivery are always reliable."</p>
+                <div class="flex items-center">
+                  <div class="mr-4 h-12 w-12 bg-primary-brown rounded-full flex items-center justify-center text-white text-xl">
+                    <span>AL</span>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-primary-brown">Amelia Lee</h4>
+                    <p class="text-gray-600 text-sm">Organic Farm Owner</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slider Navigation -->
+          <div class="flex justify-center mt-8 space-x-2">
+            <button class="testimonial-dot w-3 h-3 rounded-full bg-gray-300 focus:outline-none" data-index="0"></button>
+            <button class="testimonial-dot w-3 h-3 rounded-full bg-gray-300 focus:outline-none" data-index="1"></button>
+            <button class="testimonial-dot w-3 h-3 rounded-full bg-gray-300 focus:outline-none" data-index="2"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-20">
+        <h2 class="text-3xl font-bold text-center mb-12 text-primary-green">Contact Us</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Contact Form -->
+          <div class="bg-white p-8 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold mb-6 text-primary-brown">Send us a message</h3>
+            <form id="contact-form">
+              <div class="mb-4">
+                <label for="name" class="block text-gray-700 mb-2">Name</label>
+                <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-green" />
+                <span id="name-error" class="text-red-500 text-sm hidden">Please enter your name</span>
+              </div>
+
+              <div class="mb-4">
+                <label for="email" class="block text-gray-700 mb-2">Email</label>
+                <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-green" />
+                <span id="email-error" class="text-red-500 text-sm hidden">Please enter a valid email</span>
+              </div>
+
+              <div class="mb-6">
+                <label for="message" class="block text-gray-700 mb-2">Message</label>
+                <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-green"></textarea>
+                <span id="message-error" class="text-red-500 text-sm hidden">Please enter your message</span>
+              </div>
+
+              <button type="submit" id="submit-button" class="bg-primary-green hover:bg-opacity-90 text-white font-semibold py-2 px-6 rounded-md transition">Send Message</button>
+
+              <div id="form-success" class="mt-4 text-green-600 hidden">Thank you for your message! We'll get back to you soon.</div>
+            </form>
+          </div>
+
+          <!-- Contact Information and Map -->
+          <div>
+            <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+              <h3 class="text-xl font-semibold mb-6 text-primary-brown">Contact Information</h3>
+
+              <div class="space-y-4">
+                <div class="flex items-start">
+                  <div class="text-primary-green text-xl mr-4">
+                    <i class="fas fa-map-marker-alt"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-medium text-gray-800">Address</h4>
+                    <p class="text-gray-600">123 Organic Street, Green Valley, Indonesia</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <div class="text-primary-green text-xl mr-4">
+                    <i class="fas fa-phone"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-medium text-gray-800">Phone</h4>
+                    <p class="text-gray-600">+62 123 4567 890</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <div class="text-primary-green text-xl mr-4">
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-medium text-gray-800">Email</h4>
+                    <p class="text-gray-600">info@monicaworld.com</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Social Media Links -->
+              <div class="mt-8">
+                <h4 class="font-medium text-gray-800 mb-3">Connect with us</h4>
+                <div class="flex space-x-4">
+                  <a href="#" class="bg-primary-green text-white h-10 w-10 rounded-full flex items-center justify-center hover:bg-primary-brown transition">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                  <a href="#" class="bg-primary-green text-white h-10 w-10 rounded-full flex items-center justify-center hover:bg-primary-brown transition">
+                    <i class="fab fa-whatsapp"></i>
+                  </a>
+                  <a href="#" class="bg-primary-green text-white h-10 w-10 rounded-full flex items-center justify-center hover:bg-primary-brown transition">
+                    <i class="fas fa-envelope"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Google Map -->
+            <div class="rounded-lg overflow-hidden shadow-md h-64">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.2904026705105!2d106.82796851476882!3d-6.226303395493522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3f03d84b52d%3A0x2e1fb8c44a0bd58f!2sJakarta%2C%20Indonesia!5e0!3m2!1sen!2s!4v1652345678901!5m2!1sen!2s" width="100%" height="100%" style="border: 0" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary-green text-white py-8">
+      <div class="container mx-auto px-20">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <div class="flex items-center mb-4">
+              <img src="https://via.placeholder.com/50" alt="MonicaWorld Logo" class="h-10 w-auto mr-2" />
+              <h2 class="text-xl font-bold">MonicaWorld</h2>
+            </div>
+            <p class="text-gray-200">Nurturing soil for a sustainable future. Premium organic solutions for your crops.</p>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+            <ul class="space-y-2">
+              <li><a href="#home" class="text-gray-200 hover:text-white transition">Home</a></li>
+              <li><a href="#about" class="text-gray-200 hover:text-white transition">About Us</a></li>
+              <li><a href="#products" class="text-gray-200 hover:text-white transition">Products</a></li>
+              <li><a href="#gallery" class="text-gray-200 hover:text-white transition">Gallery</a></li>
+              <li><a href="#testimonials" class="text-gray-200 hover:text-white transition">Testimonials</a></li>
+              <li><a href="#contact" class="text-gray-200 hover:text-white transition">Contact</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Business Hours</h3>
+            <ul class="space-y-2">
+              <li class="flex justify-between">
+                <span>Monday - Friday:</span>
+                <span>8:00 AM - 5:00 PM</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Saturday:</span>
+                <span>8:00 AM - 12:00 PM</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Sunday:</span>
+                <span>Closed</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border-t border-green-700 mt-8 pt-6 text-center">
+          <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 mb-4">
+            <a href="#" class="text-gray-200 text-sm hover:text-white transition-colors duration-300">Privacy Policy</a>
+            <a href="#" class="text-gray-200 text-sm hover:text-white transition-colors duration-300">Terms of Service</a>
+            <a href="#" class="text-gray-200 text-sm hover:text-white transition-colors duration-300">FAQ</a>
+          </div>
+          <p class="text-gray-300 text-sm">&copy; 2023 MonicaWorld Organic Fertilizer. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-white text-primary-green rounded-full p-2 shadow-sm border border-gray-200 opacity-0 transition-all duration-300 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-green focus:ring-opacity-50 z-50 transform hover:-translate-y-1">
+      <i class="fas fa-chevron-up text-sm"></i>
+    </button>
+
+    <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 bg-white flex items-center justify-center z-50">
+      <div class="flex flex-col items-center">
+        <div class="relative w-12 h-12">
+          <div class="absolute inset-0 border-2 border-gray-200 rounded-full"></div>
+          <div class="absolute inset-0 border-t-2 border-primary-green rounded-full animate-spin"></div>
+        </div>
+        <span class="mt-3 text-primary-green text-sm font-light tracking-wider">MonicaWorld</span>
+      </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+      // Add Google Fonts via JavaScript
+      const fontLink = document.createElement("link");
+      fontLink.href = "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap";
+      fontLink.rel = "stylesheet";
+      document.head.appendChild(fontLink);
+
+      // Preloader
+      window.addEventListener("load", function () {
+        const preloader = document.getElementById("preloader");
+        setTimeout(() => {
+          preloader.style.opacity = "0";
+          preloader.style.transition = "opacity 0.5s ease";
+          setTimeout(() => {
+            preloader.style.display = "none";
+          }, 500);
+        }, 800);
+      });
+
+      // Mobile Menu Toggle
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      mobileMenuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Close mobile menu when clicking a menu item
+      const mobileMenuItems = mobileMenu.querySelectorAll("a");
+      mobileMenuItems.forEach((item) => {
+        item.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+        });
+      });
+
+      // Header Background Change on Scroll
+      const header = document.getElementById("header");
+      const backToTopButton = document.getElementById("back-to-top");
+
+      window.addEventListener("scroll", () => {
+        // Header background
+        if (window.scrollY > 50) {
+          header.classList.add("bg-primary-green");
+          header.classList.remove("bg-transparent");
+        } else {
+          header.classList.remove("bg-primary-green");
+          header.classList.add("bg-transparent");
+        }
+
+        // Back to top button
+        if (window.scrollY > 300) {
+          backToTopButton.classList.remove("opacity-0");
+          backToTopButton.classList.add("opacity-100");
+        } else {
+          backToTopButton.classList.remove("opacity-100");
+          backToTopButton.classList.add("opacity-0");
+        }
+
+        // Activate section animations as they enter viewport
+        document.querySelectorAll("section").forEach((section) => {
+          if (section.id !== "home") {
+            const rect = section.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            if (rect.top <= windowHeight * 0.75) {
+              section.classList.add("opacity-100");
+              section.classList.remove("opacity-0", "translate-y-4");
+            }
+          }
+        });
+      });
+
+      // Back to top functionality
+      backToTopButton.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+
+      // Gallery Lightbox
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      const closeLightbox = document.getElementById("close-lightbox");
+      const prevImage = document.getElementById("prev-image");
+      const nextImage = document.getElementById("next-image");
+      const galleryItems = document.querySelectorAll(".gallery-item img");
+
+      let currentImageIndex = 0;
+
+      // Open lightbox when clicking on a gallery image
+      galleryItems.forEach((item, index) => {
+        item.addEventListener("click", () => {
+          lightboxImg.src = item.src;
+          lightboxImg.alt = item.alt;
+          currentImageIndex = index;
+          lightbox.classList.remove("hidden");
+          document.body.style.overflow = "hidden"; // Prevent scrolling when lightbox is open
+        });
+      });
+
+      // Close lightbox
+      closeLightbox.addEventListener("click", () => {
+        lightbox.classList.add("hidden");
+        document.body.style.overflow = ""; // Restore scrolling
+      });
+
+      // Navigate to previous image
+      prevImage.addEventListener("click", () => {
+        currentImageIndex = (currentImageIndex - 1 + galleryItems.length) % galleryItems.length;
+        lightboxImg.src = galleryItems[currentImageIndex].src;
+        lightboxImg.alt = galleryItems[currentImageIndex].alt;
+      });
+
+      // Navigate to next image
+      nextImage.addEventListener("click", () => {
+        currentImageIndex = (currentImageIndex + 1) % galleryItems.length;
+        lightboxImg.src = galleryItems[currentImageIndex].src;
+        lightboxImg.alt = galleryItems[currentImageIndex].alt;
+      });
+
+      // Close lightbox when clicking outside the image
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) {
+          lightbox.classList.add("hidden");
+          document.body.style.overflow = ""; // Restore scrolling
+        }
+      });
+
+      // Keyboard navigation for lightbox
+      document.addEventListener("keydown", (e) => {
+        if (lightbox.classList.contains("hidden")) return;
+
+        if (e.key === "Escape") {
+          lightbox.classList.add("hidden");
+          document.body.style.overflow = ""; // Restore scrolling
+        } else if (e.key === "ArrowLeft") {
+          prevImage.click();
+        } else if (e.key === "ArrowRight") {
+          nextImage.click();
+        }
+      });
+
+      // Testimonials Slider
+      const testimonialSlider = document.getElementById("testimonial-slider");
+      const testimonialDots = document.querySelectorAll(".testimonial-dot");
+      const testimonialSlides = document.querySelectorAll(".testimonial-slide");
+      let currentTestimonialIndex = 0;
+
+      // Initialize dots
+      testimonialDots[0].classList.add("bg-primary-green");
+
+      // Function to update slider position
+      function updateTestimonialSlider() {
+        const slideWidth = testimonialSlides[0].offsetWidth;
+        testimonialSlider.style.transform = `translateX(-${currentTestimonialIndex * slideWidth}px)`;
+
+        // Update active dot
+        testimonialDots.forEach((dot, index) => {
+          if (index === currentTestimonialIndex) {
+            dot.classList.remove("bg-gray-300");
+            dot.classList.add("bg-primary-green");
+          } else {
+            dot.classList.remove("bg-primary-green");
+            dot.classList.add("bg-gray-300");
+          }
+        });
+      }
+
+      // Set up dot click handlers
+      testimonialDots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+          currentTestimonialIndex = index;
+          updateTestimonialSlider();
+        });
+      });
+
+      // Auto-rotate testimonials
+      let testimonialInterval = setInterval(() => {
+        currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonialSlides.length;
+        updateTestimonialSlider();
+      }, 5000);
+
+      // Pause auto-rotation on hover
+      const testimonialContainer = document.querySelector("#testimonials .relative");
+      testimonialContainer.addEventListener("mouseenter", () => {
+        clearInterval(testimonialInterval);
+      });
+
+      testimonialContainer.addEventListener("mouseleave", () => {
+        testimonialInterval = setInterval(() => {
+          currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonialSlides.length;
+          updateTestimonialSlider();
+        }, 5000);
+      });
+
+      // Update slider on window resize
+      window.addEventListener("resize", updateTestimonialSlider);
+
+      // Contact Form Validation
+      const contactForm = document.getElementById("contact-form");
+      const nameInput = document.getElementById("name");
+      const emailInput = document.getElementById("email");
+      const messageInput = document.getElementById("message");
+      const nameError = document.getElementById("name-error");
+      const emailError = document.getElementById("email-error");
+      const messageError = document.getElementById("message-error");
+      const formSuccess = document.getElementById("form-success");
+
+      contactForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        let isValid = true;
+
+        // Reset errors
+        nameError.classList.add("hidden");
+        emailError.classList.add("hidden");
+        messageError.classList.add("hidden");
+
+        // Validate name
+        if (nameInput.value.trim() === "") {
+          nameError.classList.remove("hidden");
+          isValid = false;
+        }
+
+        // Validate email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(emailInput.value.trim())) {
+          emailError.classList.remove("hidden");
+          isValid = false;
+        }
+
+        // Validate message
+        if (messageInput.value.trim() === "") {
+          messageError.classList.remove("hidden");
+          isValid = false;
+        }
+
+        // If form is valid, show success message
+        if (isValid) {
+          formSuccess.classList.remove("hidden");
+          contactForm.reset();
+
+          // Hide success message after 5 seconds
+          setTimeout(() => {
+            formSuccess.classList.add("hidden");
+          }, 5000);
+        }
+      });
+
+      // Add entrance animations to sections
+      document.addEventListener("DOMContentLoaded", function () {
+        // Apply initial state to sections
+        document.querySelectorAll("section").forEach((section) => {
+          if (section.id !== "home") {
+            section.classList.add("opacity-0", "translate-y-4", "transition-all", "duration-700", "ease-out");
+          }
+        });
+
+        // Apply hover effects to gallery items
+        document.querySelectorAll(".gallery-item").forEach((item) => {
+          item.classList.add("transition-transform", "duration-300", "ease-in-out", "hover:scale-105");
+        });
+
+        // Enhance buttons with better hover states
+        const buttons = document.querySelectorAll("button:not(#close-lightbox):not(#prev-image):not(#next-image):not(.testimonial-dot)");
+        buttons.forEach((button) => {
+          button.classList.add("transition-all", "duration-300", "ease-in-out", "hover:-translate-y-1", "focus:outline-none", "focus:ring-2", "focus:ring-offset-2", "focus:ring-primary-green");
+        });
+
+        // Add subtle hover effects to navigation links
+        const navLinks = document.querySelectorAll("header nav a");
+        navLinks.forEach((link) => {
+          link.classList.add("relative", "transition-colors", "duration-300");
+        });
+      });
+    </script>
+  </body>
+</html>
