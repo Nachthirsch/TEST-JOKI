@@ -98,7 +98,7 @@ body {
 }
 
 #header.scrolled {
-  background-color: rgba(44, 156, 106, 0.95) !important;
+  background-color: #1a4731 !important; /* Dark green color when scrolled */
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
@@ -210,5 +210,4 @@ html {
 
 .section-highlight {
   animation: sectionHighlight 1.5s ease-out;
-}
 }

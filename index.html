@@ -17,9 +17,9 @@
 
     <!-- Header/Navigation -->
     <header id="header" class="fixed w-full z-50 transition-all duration-300 bg-transparent backdrop-filter backdrop-blur-0 hover:backdrop-blur-sm">
-      <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
         <div class="flex items-center space-x-2">
-          <h1 class="text-lg md:text-xl font-bold text-white tracking-wide">Monica<span class="text-primary-green">World</span></h1>
+          <h1 class="text-lg md:text-xl font-bold text-white tracking-wide">Monica<span id="world-text" class="text-primary-green">World</span></h1>
         </div>
 
         <!-- Mobile menu button -->
@@ -94,10 +94,20 @@
         <div class="absolute inset-0 bg-black bg-opacity-50"></div>
       </div>
 
-      <div class="container mx-auto px-4 z-10 text-center md:text-left md:ml-16">
-        <h1 class="text-3xl md:text-5xl font-bold text-white mb-4">MonicaWorld Organic Fertilizer</h1>
-        <p class="text-xl md:text-2xl text-white mb-8 max-w-2xl">Nurturing soil for a sustainable future. Premium organic solutions for your crops.</p>
-        <a href="#products" class="bg-primary-green hover:bg-opacity-90 text-white font-bold py-3 px-8 rounded-lg transition transform hover:scale-105 inline-block"> View Products </a>
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 z-10 text-center md:text-left md:ml-0 lg:ml-16">
+        <div class="max-w-2xl mx-auto md:mx-0">
+          <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3">Smart Choice for Fertile Soil & a Green Future!</h1>
+          <p class="text-base sm:text-lg md:text-xl text-white mb-6 leading-relaxed opacity-90">We bring natural solutions for healthier farming! MonicaWorld provides high-quality organic manure that is environmentally friendly and rich in nutrients.</p>
+          <p class="text-sm sm:text-base text-white mb-6 leading-relaxed opacity-80 max-w-xl">With a commitment to sustainability and healthier harvests, we are ready to support farmers and plant enthusiasts in creating naturally fertile soil.</p>
+          <a href="#products" class="bg-primary-green hover:bg-opacity-90 text-white font-medium py-2 px-5 sm:px-6 rounded-lg transition transform hover:scale-105 inline-block shadow-md">
+            <span class="flex items-center">
+              <span>View Products</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </span>
+          </a>
+        </div>
       </div>
     </section>
 
@@ -107,7 +117,7 @@
       <div class="absolute top-0 right-0 w-64 h-64 bg-primary-green opacity-5 rounded-full -mr-32 -mt-32"></div>
       <div class="absolute bottom-0 left-0 w-64 h-64 bg-primary-brown opacity-5 rounded-full -ml-32 -mb-32"></div>
 
-      <div class="container mx-auto px-20">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-20">
         <div class="text-center mb-16">
           <h2 class="text-3xl md:text-4xl font-bold text-primary-green mb-4 inline-block relative">
             About Us
@@ -152,7 +162,7 @@
     <!-- Products Section -->
     <section id="products" class="py-20 bg-gradient-to-b from-white to-gray-50 relative">
       <!-- Decorative Background Elements -->
-      <div class="container mx-auto px-20 relative z-10">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-20 relative z-10">
         <!-- Section Header -->
         <div class="text-center mb-16">
           <h2 class="text-3xl md:text-4xl font-bold text-primary-green mb-4 inline-block relative">
@@ -165,7 +175,7 @@
         <!-- Products Container -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12">
           <!-- 5kg Product Card -->
-          <div class="bg-white rounded-xl overflow-hidden shadow-lg transform transition duration-300 hover:-translate-y-2 hover:shadow-xl product-shine">
+          <div class="bg-white rounded-xl overflow-hidden shadow-lg transform transition duration-300 hover:-translate-y-2 hover:shadow-xl product-shine flex flex-col">
             <div class="relative">
               <img src="https://images.unsplash.com/photo-1598966565560-daf4995aecba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80" alt="Organic Fertilizer 5kg" class="w-full h-64 object-cover" />
               <div class="absolute top-4 right-4 bg-primary-green text-white px-3 py-1 rounded-full text-sm font-medium">Bestseller</div>
@@ -275,7 +285,7 @@
 
     <!-- Gallery Section -->
     <section id="gallery" class="py-16 bg-gray-50">
-      <div class="container mx-auto px-20">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-20">
         <h2 class="text-3xl font-bold text-center mb-12 text-primary-green">Gallery</h2>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -312,7 +322,7 @@
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="py-16 bg-white">
-      <div class="container mx-auto px-20">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-20">
         <h2 class="text-3xl font-bold text-center mb-12 text-primary-green">Testimonials</h2>
 
         <div class="relative overflow-hidden">
@@ -393,7 +403,7 @@
 
     <!-- Contact Section -->
     <section id="contact" class="py-16 bg-gray-50">
-      <div class="container mx-auto px-20">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-20">
         <h2 class="text-3xl font-bold text-center mb-12 text-primary-green">Contact Us</h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -490,8 +500,8 @@
 
     <!-- Footer -->
     <footer class="bg-primary-green text-white py-8">
-      <div class="container mx-auto px-20">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-20">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           <div>
             <div class="flex items-center mb-4">
               <img src="https://via.placeholder.com/50" alt="MonicaWorld Logo" class="h-10 w-auto mr-2" />
@@ -597,15 +607,22 @@
       // Header Background Change on Scroll
       const header = document.getElementById("header");
       const backToTopButton = document.getElementById("back-to-top");
+      const worldText = document.getElementById("world-text");
 
       window.addEventListener("scroll", () => {
-        // Header background
+        // Header background - transparent at top, dark green when scrolled
         if (window.scrollY > 50) {
-          header.classList.add("bg-primary-green");
+          header.classList.add("scrolled");
+          header.classList.add("bg-[#1a4731]");
           header.classList.remove("bg-transparent");
+          worldText.classList.remove("text-primary-green");
+          worldText.classList.add("text-white");
         } else {
-          header.classList.remove("bg-primary-green");
+          header.classList.remove("scrolled");
+          header.classList.remove("bg-[#1a4731]");
           header.classList.add("bg-transparent");
+          worldText.classList.add("text-primary-green");
+          worldText.classList.remove("text-white");
         }
 
         // Back to top button
