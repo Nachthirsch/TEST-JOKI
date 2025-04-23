@@ -24,6 +24,170 @@
       .border-primary-green {
         border-color: #457801 !important;
       }
+      
+      /* Custom Styling untuk Section Titles */
+      .section-title {
+        position: relative;
+        display: inline-block;
+        padding-bottom: 15px;
+        margin-bottom: 25px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+      }
+      
+      .section-title::before {
+        content: "";
+        position: absolute;
+        width: 60px;
+        height: 3px;
+        background-color: var(--primary-green);
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 2px;
+      }
+      
+      .section-title::after {
+        content: "";
+        position: absolute;
+        width: 30px;
+        height: 3px;
+        background-color: #8B5A2B; /* Primary brown color */
+        bottom: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 2px;
+      }
+      
+      .section-title-wrapper {
+        position: relative;
+        margin-bottom: 2rem;
+      }
+      
+      .section-title-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #f3f7ee;
+        color: var(--primary-green);
+        font-size: 1.5rem;
+        position: absolute;
+        top: -25px;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 3px solid white;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        z-index: 1;
+        transition: transform 0.3s ease;
+      }
+      
+      .section-title-icon:hover {
+        transform: translateX(-50%) scale(1.1);
+      }
+      
+      .section-title-bg {
+        position: relative;
+        padding: 1.5rem 0;
+      }
+      
+      .section-title-bg::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 120px;
+        height: 100%;
+        background-color: rgba(69, 120, 1, 0.05);
+        border-radius: 30px;
+        transform: translateX(-50%);
+        z-index: 0;
+      }
+      
+      .section-title-text {
+        position: relative;
+        z-index: 1;
+      }
+      
+      .highlight-text {
+        position: relative;
+        display: inline-block;
+      }
+      
+      .highlight-text::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 6px;
+        background-color: rgba(69, 120, 1, 0.2);
+        z-index: -1;
+      }
+      
+      /* Mobile Responsiveness Improvements */
+      @media (max-width: 640px) {
+        .section-title {
+          font-size: 1.75rem !important;
+          padding-bottom: 10px;
+          margin-bottom: 20px;
+        }
+        
+        .section-title::before {
+          width: 50px;
+          height: 2px;
+        }
+        
+        .section-title::after {
+          width: 25px;
+          height: 2px;
+          bottom: -6px;
+        }
+        
+        .section-title-icon {
+          width: 40px;
+          height: 40px;
+          font-size: 1.25rem;
+          top: -20px;
+        }
+        
+        .section-title-bg::before {
+          width: 100px;
+        }
+        
+        .py-20 {
+          padding-top: 3rem !important;
+          padding-bottom: 3rem !important;
+        }
+        
+        .py-16 {
+          padding-top: 2.5rem !important;
+          padding-bottom: 2.5rem !important;
+        }
+        
+        .mb-16 {
+          margin-bottom: 2rem !important;
+        }
+        
+        .gap-12, .gap-16 {
+          gap: 1.5rem !important;
+        }
+        
+        .text-4xl {
+          font-size: 1.75rem !important;
+        }
+        
+        .text-3xl {
+          font-size: 1.5rem !important;
+        }
+        
+        .px-8 {
+          padding-left: 1rem !important;
+          padding-right: 1rem !important;
+        }
+      }
     </style>
   </head>
   <body class="font-sans">
@@ -32,13 +196,13 @@
 
     <!-- Header/Navigation -->
     <header id="header" class="fixed w-full z-50 transition-all duration-300 bg-primary-green">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+      <div class="container mx-auto px-3 sm:px-6 lg:px-8 py-2 sm:py-3 flex justify-between items-center">
         <div class="flex items-center space-x-2">
-          <h1 class="text-xl font-bold text-white tracking-wide">Monica<span id="world-text" class="text-white">World</span></h1>
+          <h1 class="text-lg sm:text-xl font-bold text-white tracking-wide">Monica<span id="world-text" class="text-white">World</span></h1>
         </div>
 
-        <!-- Mobile menu button -->
-        <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none bg-white/10 hover:bg-white/20 rounded-lg p-2 transition-all duration-300">
+        <!-- Mobile menu button - Meningkatkan ukuran untuk sentuhan lebih mudah -->
+        <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none bg-white/10 hover:bg-white/20 rounded-lg p-2.5 transition-all duration-300">
           <i class="fas fa-bars text-xl"></i>
         </button>
 
@@ -146,10 +310,16 @@
 
       <div class="container mx-auto px-4 sm:px-6 lg:px-20">
         <div class="text-center mb-16">
-          <h2 class="text-3xl md:text-4xl font-bold text-primary-green mb-4 inline-block relative">
-            About Us
-            <span class="absolute bottom-0 left-0 w-full h-1 bg-primary-brown opacity-30 rounded"></span>
-          </h2>
+          <div class="section-title-wrapper">
+            <div class="section-title-icon">
+              <i class="fas fa-seedling"></i>
+            </div>
+            <div class="section-title-bg">
+              <h2 class="section-title text-3xl md:text-4xl text-primary-green">
+                <span class="section-title-text">About <span class="highlight-text">Us</span></span>
+              </h2>
+            </div>
+          </div>
           <p class="text-gray-600 max-w-2xl mx-auto">Learn about our journey and commitment to sustainable organic farming solutions.</p>
         </div>
 
@@ -194,18 +364,24 @@
 
       <div class="container mx-auto px-4 sm:px-6 lg:px-20">
         <div class="text-center mb-16">
-          <h2 class="text-3xl md:text-4xl font-bold text-primary-green mb-4 inline-block relative">
-            Vision & Mission
-            <span class="absolute bottom-0 left-0 w-full h-1 bg-primary-brown opacity-30 rounded"></span>
-          </h2>
+          <div class="section-title-wrapper">
+            <div class="section-title-icon">
+              <i class="fas fa-compass"></i>
+            </div>
+            <div class="section-title-bg">
+              <h2 class="section-title text-3xl md:text-4xl text-primary-green">
+                <span class="section-title-text">Vision & <span class="highlight-text">Mission</span></span>
+              </h2>
+            </div>
+          </div>
           <p class="text-gray-600 max-w-2xl mx-auto">Our guiding principles that drive our commitment to sustainable agriculture.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
           <!-- Vision Card -->
           <div class="bg-gray-50 rounded-xl shadow-lg p-8 transform transition duration-300 hover:-translate-y-2 hover:shadow-xl">
-            <div class="flex items-center justify-center h-16 w-16 rounded-full bg-primary-green bg-opacity-10 mb-6 mx-auto">
-              <i class="fa-solid fa-binoculars text-primary-green text-2xl"></i>
+            <div class="flex items-center justify-center h-16 w-16 rounded-full bg-green-100 flex items-center justify-center mb-6 mx-auto">
+              <i class="fas fa-eye text-2xl text-primary-green"></i>
             </div>
             <h3 class="text-xl md:text-2xl font-bold text-primary-brown text-center mb-4">Our Vision</h3>
             <ul class="text-gray-700 space-y-3">
@@ -219,8 +395,8 @@ solutions for healthier soil and a greener planet.</span>
 
           <!-- Mission Card -->
           <div class="bg-gray-50 rounded-xl shadow-lg p-8 transform transition duration-300 hover:-translate-y-2 hover:shadow-xl">
-            <div class="flex items-center justify-center h-16 w-16 rounded-full bg-primary-brown bg-opacity-10 mb-6 mx-auto">
-              <i class="fa-solid fa-compass text-primary-brown text-2xl"></i>
+            <div class="flex items-center justify-center h-16 w-16 rounded-full bg-green-100 flex items-center justify-center mb-6 mx-auto">
+              <i class="fas fa-bullseye text-2xl text-primary-green"></i>
             </div>
             <h3 class="text-xl md:text-2xl font-bold text-primary-brown text-center mb-4">Our Mission</h3>
             <ul class="text-gray-700 space-y-3">
@@ -250,8 +426,16 @@ solutions for healthier soil and a greener planet.</span>
     <section id="services" class="py-16 px-4 bg-gray-50">
       <div class="container mx-auto">
         <div class="text-center mb-12">
-          <h2 class="text-3xl md:text-4xl font-bold mb-3 text-primary-green">Our Services</h2>
-          <div class="w-20 h-1 bg-primary-brown mx-auto mb-6"></div>
+          <div class="section-title-wrapper">
+            <div class="section-title-icon">
+              <i class="fas fa-hands-helping"></i>
+            </div>
+            <div class="section-title-bg">
+              <h2 class="section-title text-3xl md:text-4xl text-primary-green">
+                <span class="section-title-text">Our <span class="highlight-text">Services</span></span>
+              </h2>
+            </div>
+          </div>
           <p class="text-gray-600 max-w-2xl mx-auto">We provide comprehensive services to support sustainable agricultural practices and environmentally-friendly products.</p>
         </div>
         
@@ -337,10 +521,16 @@ solutions for healthier soil and a greener planet.</span>
       <div class="container mx-auto px-4 sm:px-6 lg:px-20 relative z-10">
         <!-- Section Header -->
         <div class="text-center mb-16">
-          <h2 class="text-3xl md:text-4xl font-bold text-primary-green mb-4 inline-block relative">
-            Our Products
-            <span class="absolute bottom-0 left-0 w-full h-1 bg-primary-brown opacity-30 rounded"></span>
-          </h2>
+          <div class="section-title-wrapper">
+            <div class="section-title-icon">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <div class="section-title-bg">
+              <h2 class="section-title text-3xl md:text-4xl text-primary-green">
+                <span class="section-title-text">Our <span class="highlight-text">Products</span></span>
+              </h2>
+            </div>
+          </div>
           <p class="text-gray-600 max-w-2xl mx-auto">Discover our premium organic fertilizers, crafted with care to enhance soil health and promote sustainable agriculture.</p>
         </div>
 
@@ -365,6 +555,10 @@ solutions for healthier soil and a greener planet.</span>
               </div>
 
               <p class="text-gray-600 mb-6">Our coarse goat manure is perfect for improving soil aeration and drainage. This nutrient-rich organic fertilizer breaks down slowly, providing long-lasting nourishment for your plants.</p>
+              
+              <div class="bg-gray-50 p-3 rounded-md mb-4 border-l-4 border-primary-green">
+                <p class="text-gray-600 text-sm mb-2">Organic fertilizer from goat manure, fermented for 3-4 weeks for maximum results and odor-free. Coarse: Large texture, suitable for improving soil structure & aeration. ✅ Rich in nutrients, safe & environmentally friendly.</p>
+              </div>
 
               <div class="flex items-center justify-between">
                 <div class="flex items-center">
@@ -400,6 +594,10 @@ solutions for healthier soil and a greener planet.</span>
               </div>
 
               <p class="text-gray-600 mb-6">Our fine-textured goat manure is specially processed for fast nutrient release. Ideal for seedlings and potted plants, it mixes easily with soil for quick and effective plant nutrition.</p>
+              
+              <div class="bg-gray-50 p-3 rounded-md mb-4 border-l-4 border-primary-green">
+                <p class="text-gray-600 text-sm mb-2">Organic fertilizer from goat manure, fermented for 3-4 weeks for maximum results and odor-free. Fine: Softer texture, quickly absorbed by plants, suitable for rapid growth. ✅ Rich in nutrients, safe & environmentally friendly.</p>
+              </div>
 
               <div class="flex items-center justify-between">
                 <div class="flex items-center">
@@ -435,6 +633,10 @@ solutions for healthier soil and a greener planet.</span>
               </div>
 
               <p class="text-gray-600 mb-6">Our coarse cocopeat provides excellent aeration and drainage while retaining moisture. Perfect for orchids, succulents, and plants that prefer loose growing medium with good root support.</p>
+              
+              <div class="bg-gray-50 p-3 rounded-md mb-4 border-l-4 border-primary-green">
+                <p class="text-gray-600 text-sm mb-2">Planting medium from coconut husk that is environmentally friendly and rich in benefits. Coarse: For good drainage and air circulation. ✅ Neutral pH, fungus-free, suitable for all types of plants.</p>
+              </div>
 
               <div class="flex items-center justify-between">
                 <div class="flex items-center">
@@ -470,6 +672,10 @@ solutions for healthier soil and a greener planet.</span>
               </div>
 
               <p class="text-gray-600 mb-6">Our fine-textured cocopeat is ideal for seed starting and soil amendment. It has superior water retention capacity and creates the perfect environment for seedling development and root growth.</p>
+              
+              <div class="bg-gray-50 p-3 rounded-md mb-4 border-l-4 border-primary-green">
+                <p class="text-gray-600 text-sm mb-2">Planting medium from coconut husk that is environmentally friendly and rich in benefits. Fine: Retains water longer, suitable for sensitive plants. ✅ Neutral pH, fungus-free, suitable for all types of plants.</p>
+              </div>
 
               <div class="flex items-center justify-between">
                 <div class="flex items-center">
@@ -504,6 +710,10 @@ solutions for healthier soil and a greener planet.</span>
               </div>
 
               <p class="text-gray-600 mb-6">Our finely milled Lembang soil is the perfect foundation for seed germination and garden revitalization. With its exceptional moisture‑holding balance, rich volcanic minerals, and superior aeration, it creates an ideal environment for healthy root establishment and vigorous plant growth.</p>
+              
+              <div class="bg-gray-50 p-3 rounded-md mb-4 border-l-4 border-primary-green">
+                <p class="text-gray-600 text-sm mb-2">Natural fertile soil from the Lembang area, famous for its quality. ✅ Contains complete nutrients, lightweight, porous, and suitable for all planting media—vegetables, fruits, to ornamental plants. ✨ Ready to use, without additional mixtures.</p>
+              </div>
 
               <div class="flex items-center justify-between">
                 <div class="flex items-center">
@@ -569,7 +779,19 @@ solutions for healthier soil and a greener planet.</span>
     <!-- Gallery Section -->
     <section id="gallery" class="py-16 bg-gray-50">
       <div class="container mx-auto px-4 sm:px-6 lg:px-20">
-        <h2 class="text-3xl font-bold text-center mb-12 text-primary-green">Gallery</h2>
+        <div class="text-center mb-12">
+          <div class="section-title-wrapper">
+            <div class="section-title-icon">
+              <i class="fas fa-images"></i>
+            </div>
+            <div class="section-title-bg">
+              <h2 class="section-title text-3xl md:text-4xl text-primary-green">
+                <span class="section-title-text"><span class="highlight-text">Gallery</span></span>
+              </h2>
+            </div>
+          </div>
+          <p class="text-gray-600 max-w-2xl mx-auto">Explore our collection of images showcasing our products and their application in various settings.</p>
+        </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           <!-- Gallery Images -->
@@ -690,7 +912,19 @@ solutions for healthier soil and a greener planet.</span>
     <!-- Testimonials Section -->
     <section id="testimonials" class="py-16 bg-white">
       <div class="container mx-auto px-4 sm:px-6 lg:px-20">
-        <h2 class="text-3xl font-bold text-center mb-12 text-primary-green">Testimonials</h2>
+        <div class="text-center mb-12">
+          <div class="section-title-wrapper">
+            <div class="section-title-icon">
+              <i class="fas fa-comment-dots"></i>
+            </div>
+            <div class="section-title-bg">
+              <h2 class="section-title text-3xl md:text-4xl text-primary-green">
+                <span class="section-title-text"><span class="highlight-text">Testimonials</span></span>
+              </h2>
+            </div>
+          </div>
+          <p class="text-gray-600 max-w-2xl mx-auto">Hear what our valued customers have to say about their experience with our products.</p>
+        </div>
 
         <div class="relative overflow-hidden">
           <div id="testimonial-slider" class="flex transition-transform duration-500">
@@ -771,7 +1005,19 @@ solutions for healthier soil and a greener planet.</span>
     <!-- Contact Section -->
     <section id="contact" class="py-16 bg-gray-50">
       <div class="container mx-auto px-4 sm:px-6 lg:px-20">
-        <h2 class="text-3xl font-bold text-center mb-12 text-primary-green">Contact Us</h2>
+        <div class="text-center mb-12">
+          <div class="section-title-wrapper">
+            <div class="section-title-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="section-title-bg">
+              <h2 class="section-title text-3xl md:text-4xl text-primary-green">
+                <span class="section-title-text">Contact <span class="highlight-text">Us</span></span>
+              </h2>
+            </div>
+          </div>
+          <p class="text-gray-600 max-w-2xl mx-auto">Get in touch with us for inquiries, orders, or any information about our products and services.</p>
+        </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <!-- Contact Form -->
@@ -866,56 +1112,95 @@ solutions for healthier soil and a greener planet.</span>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-primary-green text-white py-8">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-20">
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          <div>
-            <div class="flex items-center mb-4">
-              <h2 class="text-xl font-bold">MonicaWorld</h2>
+    <footer class="bg-primary-green text-white py-12">
+      <!-- Simplified wave divider -->
+      <div class="w-full overflow-hidden">
+        <svg class="w-full h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="rgba(255,255,255,0.1)"></path>
+        </svg>
+      </div>
+
+      <div class="container mx-auto px-5 lg:px-10">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-10 mb-10 pb-10 border-b border-white/10">
+          <!-- Logo and Description -->
+          <div class="md:col-span-5 space-y-4">
+            <div class="flex items-center mb-4 justify-center md:justify-start">
+              <h2 class="text-2xl font-bold tracking-wider">Monica<span class="font-light">World</span></h2>
+              <div class="w-1.5 h-1.5 rounded-full bg-white ml-2 animate-pulse"></div>
             </div>
-            <p class="text-gray-200">Nurturing soil for a sustainable future. Premium organic solutions for your crops.</p>
+            <p class="text-gray-200 leading-relaxed text-center md:text-left">
+              Nurturing soil for a sustainable future. Premium organic solutions for your crops and gardens, crafted with care for nature and people.
+            </p>
+            
+            <!-- Social Media Icons -->
+            <div class="flex space-x-5 justify-center md:justify-start">
+              <a href="#" class="hover:text-green-200 transition-colors duration-300" aria-label="Visit our Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="hover:text-green-200 transition-colors duration-300" aria-label="Visit our Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="hover:text-green-200 transition-colors duration-300" aria-label="Visit our Twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="hover:text-green-200 transition-colors duration-300" aria-label="Visit our LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
           </div>
 
-          <div>
-            <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-            <ul class="space-y-2">
-              <li><a href="#home" class="text-gray-200 hover:text-white transition">Home</a></li>
-              <li><a href="#about" class="text-gray-200 hover:text-white transition">About Us</a></li>
-              <li><a href="#vision-mission" class="text-gray-200 hover:text-white transition">Vision & Mission</a></li>
-              <li><a href="#products" class="text-gray-200 hover:text-white transition">Products</a></li>
-              <li><a href="#values" class="text-gray-200 hover:text-white transition">Our Values</a></li>
-              <li><a href="#gallery" class="text-gray-200 hover:text-white transition">Gallery</a></li>
-              <li><a href="#testimonials" class="text-gray-200 hover:text-white transition">Testimonials</a></li>
-              <li><a href="#contact" class="text-gray-200 hover:text-white transition">Contact</a></li>
+          <!-- Quick Links -->
+          <div class="md:col-span-3 md:ml-5">
+            <h3 class="text-lg font-semibold mb-4 text-center md:text-left">Quick Links</h3>
+            <ul class="space-y-2 text-center md:text-left grid grid-cols-2 md:grid-cols-1 gap-2">
+              <li><a href="#home" class="text-gray-200 hover:text-white transition-colors duration-300 inline-block"><i class="fas fa-chevron-right text-xs mr-2 opacity-60"></i>Home</a></li>
+              <li><a href="#about" class="text-gray-200 hover:text-white transition-colors duration-300 inline-block"><i class="fas fa-chevron-right text-xs mr-2 opacity-60"></i>About Us</a></li>
+              <li><a href="#vision-mission" class="text-gray-200 hover:text-white transition-colors duration-300 inline-block"><i class="fas fa-chevron-right text-xs mr-2 opacity-60"></i>Vision & Mission</a></li>
+              <li><a href="#products" class="text-gray-200 hover:text-white transition-colors duration-300 inline-block"><i class="fas fa-chevron-right text-xs mr-2 opacity-60"></i>Products</a></li>
+              <li><a href="#values" class="text-gray-200 hover:text-white transition-colors duration-300 inline-block"><i class="fas fa-chevron-right text-xs mr-2 opacity-60"></i>Our Values</a></li>
+              <li><a href="#gallery" class="text-gray-200 hover:text-white transition-colors duration-300 inline-block"><i class="fas fa-chevron-right text-xs mr-2 opacity-60"></i>Gallery</a></li>
+              <li><a href="#testimonials" class="text-gray-200 hover:text-white transition-colors duration-300 inline-block"><i class="fas fa-chevron-right text-xs mr-2 opacity-60"></i>Testimonials</a></li>
+              <li><a href="#contact" class="text-gray-200 hover:text-white transition-colors duration-300 inline-block"><i class="fas fa-chevron-right text-xs mr-2 opacity-60"></i>Contact</a></li>
             </ul>
           </div>
 
-          <div>
-            <h3 class="text-lg font-semibold mb-4">Business Hours</h3>
-            <ul class="space-y-2">
-              <li class="flex justify-between">
-                <span>Monday - Friday:</span>
-                <span>8:00 AM - 5:00 PM</span>
+          <!-- Contact Info -->
+          <div class="md:col-span-4">
+            <h3 class="text-lg font-semibold mb-4 text-center md:text-left">Contact Us</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start justify-center md:justify-start">
+                <i class="fas fa-map-marker-alt mt-1 mr-3 text-green-200 flex-shrink-0"></i>
+                <span class="text-gray-200">123 Organic Street, Green Valley, Indonesia</span>
               </li>
-              <li class="flex justify-between">
-                <span>Saturday:</span>
-                <span>8:00 AM - 12:00 PM</span>
+              <li class="flex items-start justify-center md:justify-start">
+                <i class="fas fa-envelope mt-1 mr-3 text-green-200 flex-shrink-0"></i>
+                <span class="text-gray-200">info@monicaworld.com</span>
               </li>
-              <li class="flex justify-between">
-                <span>Sunday:</span>
-                <span>Closed</span>
+              <li class="flex items-start justify-center md:justify-start">
+                <i class="fas fa-phone-alt mt-1 mr-3 text-green-200 flex-shrink-0"></i>
+                <span class="text-gray-200">+62 123 4567 890</span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div class="border-t border-green-700 mt-8 pt-6 text-center">
-          <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 mb-4">
-            <a href="#" class="text-gray-200 text-sm hover:text-white transition-colors duration-300">Privacy Policy</a>
-            <a href="#" class="text-gray-200 text-sm hover:text-white transition-colors duration-300">Terms of Service</a>
-            <a href="#" class="text-gray-200 text-sm hover:text-white transition-colors duration-300">FAQ</a>
+        <!-- Bottom Footer -->
+        <div class="text-center">
+          <!-- Footer Links -->
+          <div class="flex flex-wrap justify-center gap-3 md:gap-8 mb-6">
+            <a href="#" class="text-sm text-gray-300 hover:text-white transition-colors duration-300">
+              Privacy Policy
+            </a>
+            <a href="#" class="text-sm text-gray-300 hover:text-white transition-colors duration-300">
+              Terms of Service
+            </a>
+            <a href="#" class="text-sm text-gray-300 hover:text-white transition-colors duration-300">
+              FAQ
+            </a>
           </div>
-          <p class="text-gray-300 text-sm">&copy; 2023 MonicaWorld Organic Fertilizer. All rights reserved.</p>
+          
+          <p class="text-sm text-gray-300 mb-3">&copy; 2023 MonicaWorld Organic Fertilizer. All rights reserved.</p>
+          <div class="text-xs text-gray-400 py-2 mx-auto max-w-xs">Nurturing soil • Growing future • Sustaining nature</div>
         </div>
       </div>
     </footer>
