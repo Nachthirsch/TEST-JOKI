@@ -2,7 +2,7 @@
 
 /* Custom colors that match the brand */
 :root {
-  --primary-green: #2c9c6a;
+  --primary-green: #457801;
   --primary-brown: #6b4423;
 }
 
@@ -97,27 +97,24 @@ body {
   transition: all 0.3s ease;
 }
 
-#header.scrolled {
-  background-color: #1a4731 !important; /* Dark green color when scrolled */
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
+/* Navigation Link Hover and Active Styles */
+.nav-link {
+  position: relative;
+  transition: all 0.3s ease;
 }
 
-.nav-link.active span:last-child {
-  width: 75%;
-  background-color: var(--primary-green, #2c9c6a);
+.nav-link:hover {
+  transform: translateY(-2px);
+}
+
+.nav-link.active {
+  border-bottom-color: white;
 }
 
 /* Mobile Menu Animation */
 #mobile-menu.open {
   transform: scaleY(1);
   opacity: 1;
-}
-
-.mobile-link.active {
-  border-left-color: var(--primary-green, #2c9c6a);
-  background-color: rgba(44, 156, 106, 0.1);
 }
 
 /* Set up logo bounce effect */
@@ -164,7 +161,7 @@ body {
 
 /* Header scroll effect */
 #header.scrolled {
-  background-color: var(--primary-green, #2c9c6a) !important;
+  background-color: var(--primary-green, #457801) !important;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
@@ -190,7 +187,7 @@ html {
   left: 0;
   width: 0%;
   height: 3px;
-  background: linear-gradient(to right, #2c9c6a, #6b4423);
+  background: linear-gradient(to right, #457801, #6b4423);
   z-index: 9999;
   transition: width 0.2s ease;
 }
@@ -198,16 +195,21 @@ html {
 /* Section highlight effect when navigating */
 @keyframes sectionHighlight {
   0% {
-    box-shadow: 0 0 0 0 rgba(44, 156, 106, 0);
+    box-shadow: 0 0 0 0 rgba(69, 120, 1, 0);
   }
   50% {
-    box-shadow: 0 0 0 20px rgba(44, 156, 106, 0.1);
+    box-shadow: 0 0 0 20px rgba(69, 120, 1, 0.1);
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(44, 156, 106, 0);
+    box-shadow: 0 0 0 0 rgba(69, 120, 1, 0);
   }
 }
 
 .section-highlight {
   animation: sectionHighlight 1.5s ease-out;
+}
+
+.mobile-link.active {
+  border-left-color: var(--primary-green, #457801);
+  background-color: rgba(69, 120, 1, 0.1);
 }

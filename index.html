@@ -10,16 +10,31 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css" />
+    <!-- Override primary green color -->
+    <style>
+      :root {
+        --primary-green: #457801 !important;
+      }
+      .bg-primary-green {
+        background-color: #457801 !important;
+      }
+      .text-primary-green {
+        color: #457801 !important;
+      }
+      .border-primary-green {
+        border-color: #457801 !important;
+      }
+    </style>
   </head>
   <body class="font-sans">
     <!-- Scroll Progress Indicator -->
     <div class="scroll-progress"></div>
 
     <!-- Header/Navigation -->
-    <header id="header" class="fixed w-full z-50 transition-all duration-300 bg-transparent backdrop-filter backdrop-blur-0 hover:backdrop-blur-sm">
+    <header id="header" class="fixed w-full z-50 transition-all duration-300 bg-primary-green">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
         <div class="flex items-center space-x-2">
-          <h1 class="text-lg md:text-xl font-bold text-white tracking-wide">Monica<span id="world-text" class="text-primary-green">World</span></h1>
+          <h1 class="text-xl font-bold text-white tracking-wide">Monica<span id="world-text" class="text-white">World</span></h1>
         </div>
 
         <!-- Mobile menu button -->
@@ -28,30 +43,42 @@
         </button>
 
         <!-- Desktop Navigation -->
-        <nav class="hidden md:flex space-x-6">
-          <a href="#home" class="nav-link active group relative text-white font-medium py-2 px-3 transition-all duration-300 hover:text-primary-green rounded-lg hover:bg-white/10">
-            <span class="flex items-center"><i class="fas fa-home mr-1.5 text-xs"></i> Home</span>
-            <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-primary-green transition-all duration-300 ease-out group-hover:w-3/4"></span>
+        <nav class="hidden md:flex items-center space-x-6">
+          <a href="#home" class="nav-link active text-white font-medium py-2 transition-all duration-300 hover:text-white border-b-2 border-transparent hover:border-white">
+            <span class="flex items-center">
+              <i class="fas fa-home mr-2"></i>
+              <span>Home</span>
+            </span>
           </a>
-          <a href="#about" class="nav-link group relative text-white font-medium py-2 px-3 transition-all duration-300 hover:text-primary-green rounded-lg hover:bg-white/10">
-            <span class="flex items-center"><i class="fas fa-info-circle mr-1.5 text-xs"></i> About Us</span>
-            <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-primary-green transition-all duration-300 ease-out group-hover:w-3/4"></span>
+          <a href="#about" class="nav-link text-white font-medium py-2 transition-all duration-300 hover:text-white border-b-2 border-transparent hover:border-white">
+            <span class="flex items-center">
+              <i class="fas fa-info-circle mr-2"></i>
+              <span>About Us</span>
+            </span>
           </a>
-          <a href="#products" class="nav-link group relative text-white font-medium py-2 px-3 transition-all duration-300 hover:text-primary-green rounded-lg hover:bg-white/10">
-            <span class="flex items-center"><i class="fas fa-leaf mr-1.5 text-xs"></i> Products</span>
-            <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-primary-green transition-all duration-300 ease-out group-hover:w-3/4"></span>
+          <a href="#services" class="nav-link text-white font-medium py-2 transition-all duration-300 hover:text-white border-b-2 border-transparent hover:border-white">
+            <span class="flex items-center">
+              <i class="fas fa-tools mr-2"></i>
+              <span>Services</span>
+            </span>
           </a>
-          <a href="#gallery" class="nav-link group relative text-white font-medium py-2 px-3 transition-all duration-300 hover:text-primary-green rounded-lg hover:bg-white/10">
-            <span class="flex items-center"><i class="fas fa-images mr-1.5 text-xs"></i> Gallery</span>
-            <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-primary-green transition-all duration-300 ease-out group-hover:w-3/4"></span>
+          <a href="#products" class="nav-link text-white font-medium py-2 transition-all duration-300 hover:text-white border-b-2 border-transparent hover:border-white">
+            <span class="flex items-center">
+              <i class="fas fa-leaf mr-2"></i>
+              <span>Products</span>
+            </span>
           </a>
-          <a href="#testimonials" class="nav-link group relative text-white font-medium py-2 px-3 transition-all duration-300 hover:text-primary-green rounded-lg hover:bg-white/10">
-            <span class="flex items-center"><i class="fas fa-quote-left mr-1.5 text-xs"></i> Testimonials</span>
-            <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-primary-green transition-all duration-300 ease-out group-hover:w-3/4"></span>
+          <a href="#gallery" class="nav-link text-white font-medium py-2 transition-all duration-300 hover:text-white border-b-2 border-transparent hover:border-white">
+            <span class="flex items-center">
+              <i class="fas fa-images mr-2"></i>
+              <span>Gallery</span>
+            </span>
           </a>
-          <a href="#contact" class="nav-link group relative text-white font-medium py-2 px-3 transition-all duration-300 hover:text-primary-green rounded-lg hover:bg-white/10">
-            <span class="flex items-center"><i class="fas fa-envelope mr-1.5 text-xs"></i> Contact</span>
-            <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-primary-green transition-all duration-300 ease-out group-hover:w-3/4"></span>
+          <a href="#contact" class="nav-link text-white font-medium py-2 transition-all duration-300 hover:text-white border-b-2 border-transparent hover:border-white">
+            <span class="flex items-center">
+              <i class="fas fa-envelope mr-2"></i>
+              <span>Contact</span>
+            </span>
           </a>
         </nav>
       </div>
@@ -67,6 +94,10 @@
             <i class="fas fa-info-circle text-sm"></i>
             <span>About Us</span>
           </a>
+          <a href="#services" class="mobile-link flex items-center space-x-3 text-primary-green hover:text-primary-brown transition-colors p-2 border-l-4 border-transparent hover:border-primary-green rounded hover:bg-gray-50">
+            <i class="fas fa-tools text-sm"></i>
+            <span>Services</span>
+          </a>
           <a href="#products" class="mobile-link flex items-center space-x-3 text-primary-green hover:text-primary-brown transition-colors p-2 border-l-4 border-transparent hover:border-primary-green rounded hover:bg-gray-50">
             <i class="fas fa-leaf text-sm"></i>
             <span>Products</span>
@@ -74,10 +105,6 @@
           <a href="#gallery" class="mobile-link flex items-center space-x-3 text-primary-green hover:text-primary-brown transition-colors p-2 border-l-4 border-transparent hover:border-primary-green rounded hover:bg-gray-50">
             <i class="fas fa-images text-sm"></i>
             <span>Gallery</span>
-          </a>
-          <a href="#testimonials" class="mobile-link flex items-center space-x-3 text-primary-green hover:text-primary-brown transition-colors p-2 border-l-4 border-transparent hover:border-primary-green rounded hover:bg-gray-50">
-            <i class="fas fa-quote-left text-sm"></i>
-            <span>Testimonials</span>
           </a>
           <a href="#contact" class="mobile-link flex items-center space-x-3 text-primary-green hover:text-primary-brown transition-colors p-2 border-l-4 border-transparent hover:border-primary-green rounded hover:bg-gray-50">
             <i class="fas fa-envelope text-sm"></i>
@@ -159,6 +186,151 @@
       </div>
     </section>
 
+    <!-- Vision and Mission Section -->
+    <section id="vision-mission" class="py-20 bg-white relative overflow-hidden">
+      <!-- Decorative elements -->
+      <div class="absolute top-0 left-0 w-64 h-64 bg-primary-green opacity-5 rounded-full -ml-32 -mt-32"></div>
+      <div class="absolute bottom-0 right-0 w-64 h-64 bg-primary-brown opacity-5 rounded-full -mr-32 -mb-32"></div>
+
+      <div class="container mx-auto px-4 sm:px-6 lg:px-20">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-primary-green mb-4 inline-block relative">
+            Vision & Mission
+            <span class="absolute bottom-0 left-0 w-full h-1 bg-primary-brown opacity-30 rounded"></span>
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">Our guiding principles that drive our commitment to sustainable agriculture.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
+          <!-- Vision Card -->
+          <div class="bg-gray-50 rounded-xl shadow-lg p-8 transform transition duration-300 hover:-translate-y-2 hover:shadow-xl">
+            <div class="flex items-center justify-center h-16 w-16 rounded-full bg-primary-green bg-opacity-10 mb-6 mx-auto">
+              <i class="fa-solid fa-binoculars text-primary-green text-2xl"></i>
+            </div>
+            <h3 class="text-xl md:text-2xl font-bold text-primary-brown text-center mb-4">Our Vision</h3>
+            <ul class="text-gray-700 space-y-3">
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-primary-green mt-1 mr-2"></i>
+                <span>To be a pioneer in eco-friendly organic farming
+solutions for healthier soil and a greener planet.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Mission Card -->
+          <div class="bg-gray-50 rounded-xl shadow-lg p-8 transform transition duration-300 hover:-translate-y-2 hover:shadow-xl">
+            <div class="flex items-center justify-center h-16 w-16 rounded-full bg-primary-brown bg-opacity-10 mb-6 mx-auto">
+              <i class="fa-solid fa-compass text-primary-brown text-2xl"></i>
+            </div>
+            <h3 class="text-xl md:text-2xl font-bold text-primary-brown text-center mb-4">Our Mission</h3>
+            <ul class="text-gray-700 space-y-3">
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-primary-green mt-1 mr-2"></i>
+                <span>Produce high-quality organic fertilizers that are safe for the environment and plants.</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-primary-green mt-1 mr-2"></i>
+                <span>Support farmers and agricultural communities in realizing sustainable farming practices.</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-primary-green mt-1 mr-2"></i>
+                <span>Educate about the importance of fertile soil as the foundation for food security and life.</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-primary-green mt-1 mr-2"></i>
+                <span>Build a strong export network to introduce local products to the global market.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Services Section -->
+    <section id="services" class="py-16 px-4 bg-gray-50">
+      <div class="container mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-3 text-primary-green">Our Services</h2>
+          <div class="w-20 h-1 bg-primary-brown mx-auto mb-6"></div>
+          <p class="text-gray-600 max-w-2xl mx-auto">We provide comprehensive services to support sustainable agricultural practices and environmentally-friendly products.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Service 1 -->
+          <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:transform hover:scale-105">
+            <div class="p-6">
+              <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-4 mx-auto">
+                <i class="fas fa-seedling text-2xl text-primary-green"></i>
+              </div>
+              <h3 class="text-xl font-semibold mb-3 text-primary-green text-center">Agricultural Consulting</h3>
+              <p class="text-gray-600 text-center">Expert guidance on sustainable farming practices, soil management, and crop optimization.</p>
+            </div>
+          </div>
+          
+          <!-- Service 2 -->
+          <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:transform hover:scale-105">
+            <div class="p-6">
+              <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-4 mx-auto">
+                <i class="fas fa-truck text-2xl text-primary-green"></i>
+              </div>
+              <h3 class="text-xl font-semibold mb-3 text-primary-green text-center">Product Distribution</h3>
+              <p class="text-gray-600 text-center">Timely and reliable distribution of our organic agricultural products to farmers nationwide.</p>
+            </div>
+          </div>
+          
+          <!-- Service 3 -->
+          <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:transform hover:scale-105">
+            <div class="p-6">
+              <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-4 mx-auto">
+                <i class="fas fa-flask text-2xl text-primary-green"></i>
+              </div>
+              <h3 class="text-xl font-semibold mb-3 text-primary-green text-center">Custom Formulation</h3>
+              <p class="text-gray-600 text-center">Tailored organic fertilizer and soil amendment solutions based on specific soil analysis.</p>
+            </div>
+          </div>
+          
+          <!-- Service 4 -->
+          <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:transform hover:scale-105">
+            <div class="p-6">
+              <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-4 mx-auto">
+                <i class="fas fa-leaf text-2xl text-primary-green"></i>
+              </div>
+              <h3 class="text-xl font-semibold mb-3 text-primary-green text-center">Organic Certification</h3>
+              <p class="text-gray-600 text-center">Assistance with organic certification processes and compliance with sustainable practices.</p>
+            </div>
+          </div>
+          
+          <!-- Service 5 -->
+          <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:transform hover:scale-105">
+            <div class="p-6">
+              <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-4 mx-auto">
+                <i class="fas fa-chalkboard-teacher text-2xl text-primary-green"></i>
+              </div>
+              <h3 class="text-xl font-semibold mb-3 text-primary-green text-center">Training Programs</h3>
+              <p class="text-gray-600 text-center">Educational workshops and training sessions on eco-friendly farming techniques.</p>
+            </div>
+          </div>
+          
+          <!-- Service 6 -->
+          <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:transform hover:scale-105">
+            <div class="p-6">
+              <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-4 mx-auto">
+                <i class="fas fa-recycle text-2xl text-primary-green"></i>
+              </div>
+              <h3 class="text-xl font-semibold mb-3 text-primary-green text-center">Waste Management Solutions</h3>
+              <p class="text-gray-600 text-center">Innovative solutions for agricultural waste recycling and sustainable waste management.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mt-12 text-center">
+          <a href="#contact" class="inline-block px-6 py-3 bg-primary-green text-white font-medium rounded-md shadow-md hover:bg-primary-brown transition-colors duration-300">
+            <i class="fas fa-phone-alt mr-2"></i>Contact Us For Services
+          </a>
+        </div>
+      </div>
+    </section>
+    
     <!-- Products Section -->
     <section id="products" class="py-20 bg-gradient-to-b from-white to-gray-50 relative">
       <!-- Decorative Background Elements -->
@@ -349,36 +521,45 @@
           </div>
         </div>
 
-        <!-- Benefits Section -->
-        <div class="mt-16 bg-white rounded-xl shadow-md p-8 md:p-10">
-          <h3 class="text-xl font-semibold text-primary-green mb-6 text-center">Why Choose Our Organic Fertilizers?</h3>
+        <!-- Our Values Section (replacing Benefits Section) -->
+        <div id="values" class="mt-16 bg-white rounded-xl shadow-md p-8 md:p-10">
+          <h3 class="text-xl md:text-2xl font-semibold text-primary-green mb-6 text-center">Our Values</h3>
 
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- Benefit 1 -->
-            <div class="flex flex-col items-center text-center p-4 rounded-lg hover:bg-gray-50 transition">
-              <div class="w-24 h-24 bg-primary-green rounded-full flex items-center justify-center mb-4">
-                <i class="fas fa-seedling text-3xl text-white"></i>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Value 1 -->
+            <div class="flex flex-col items-center text-center p-6 rounded-lg hover:bg-gray-50 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-md">
+              <div class="w-24 h-24 bg-primary-green rounded-full flex items-center justify-center mb-5">
+                <i class="fas fa-handshake text-3xl text-white"></i>
               </div>
-              <h4 class="font-medium text-gray-800 mb-2">Enhances Growth</h4>
-              <p class="text-gray-600 text-sm">Promotes robust plant growth and increases crop yields naturally.</p>
+              <h4 class="font-medium text-gray-800 mb-3 text-lg">Integrity</h4>
+              <p class="text-gray-700">We conduct our business with honesty, responsibility, and transparency in every step.</p>
             </div>
 
-            <!-- Benefit 2 -->
-            <div class="flex flex-col items-center text-center p-4 rounded-lg hover:bg-gray-50 transition">
-              <div class="w-24 h-24 bg-primary-green rounded-full flex items-center justify-center mb-4">
-                <i class="fas fa-globe-americas text-3xl text-white"></i>
+            <!-- Value 2 -->
+            <div class="flex flex-col items-center text-center p-6 rounded-lg hover:bg-gray-50 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-md">
+              <div class="w-24 h-24 bg-primary-green rounded-full flex items-center justify-center mb-5">
+                <i class="fas fa-users text-3xl text-white"></i>
               </div>
-              <h4 class="font-medium text-gray-800 mb-2">Eco-Friendly</h4>
-              <p class="text-gray-600 text-sm">100% organic ingredients that are safe for the environment and wildlife.</p>
+              <h4 class="font-medium text-gray-800 mb-3 text-lg">Collaboration</h4>
+              <p class="text-gray-700">We believe in the power of collaboration — with partners, customers, and the community.</p>
             </div>
 
-            <!-- Benefit 3 -->
-            <div class="flex flex-col items-center text-center p-4 rounded-lg hover:bg-gray-50 transition">
-              <div class="w-24 h-24 bg-primary-green rounded-full flex items-center justify-center mb-4">
-                <i class="fas fa-hourglass-half text-3xl text-white"></i>
+            <!-- Value 3 -->
+            <div class="flex flex-col items-center text-center p-6 rounded-lg hover:bg-gray-50 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-md">
+              <div class="w-24 h-24 bg-primary-green rounded-full flex items-center justify-center mb-5">
+                <i class="fas fa-lightbulb text-3xl text-white"></i>
               </div>
-              <h4 class="font-medium text-gray-800 mb-2">Long-lasting</h4>
-              <p class="text-gray-600 text-sm">Slow-release formula provides nutrients over an extended period.</p>
+              <h4 class="font-medium text-gray-800 mb-3 text-lg">Innovation</h4>
+              <p class="text-gray-700">We continuously innovate to deliver better and more eco-friendly products.</p>
+            </div>
+
+            <!-- Value 4 -->
+            <div class="flex flex-col items-center text-center p-6 rounded-lg hover:bg-gray-50 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-md">
+              <div class="w-24 h-24 bg-primary-green rounded-full flex items-center justify-center mb-5">
+                <i class="fas fa-leaf text-3xl text-white"></i>
+              </div>
+              <h4 class="font-medium text-gray-800 mb-3 text-lg">Sustainability</h4>
+              <p class="text-gray-700">Our commitment is to protect the environment and create a positive impact for the planet and future generations.</p>
             </div>
           </div>
         </div>
@@ -662,13 +843,13 @@
               <div class="mt-8">
                 <h4 class="font-medium text-gray-800 mb-3">Connect with us</h4>
                 <div class="flex space-x-4">
-                  <a href="#" class="bg-primary-green text-white h-10 w-10 rounded-full flex items-center justify-center hover:bg-primary-brown transition">
+                  <a href="#" class="bg-primary-green text-white h-10 w-10 rounded-full flex items-center justify-center hover:bg-primary-brown transition" target="_blank" rel="noopener">
                     <i class="fab fa-instagram"></i>
                   </a>
-                  <a href="#" class="bg-primary-green text-white h-10 w-10 rounded-full flex items-center justify-center hover:bg-primary-brown transition">
+                  <a href="#" class="bg-primary-green text-white h-10 w-10 rounded-full flex items-center justify-center hover:bg-primary-brown transition" target="_blank" rel="noopener">
                     <i class="fab fa-whatsapp"></i>
                   </a>
-                  <a href="#" class="bg-primary-green text-white h-10 w-10 rounded-full flex items-center justify-center hover:bg-primary-brown transition">
+                  <a href="#" class="bg-primary-green text-white h-10 w-10 rounded-full flex items-center justify-center hover:bg-primary-brown transition" target="_blank" rel="noopener">
                     <i class="fas fa-envelope"></i>
                   </a>
                 </div>
@@ -677,7 +858,7 @@
 
             <!-- Google Map -->
             <div class="rounded-lg overflow-hidden shadow-md h-64">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3966.529874607578!2d107.28699017499018!3d-6.193594893794062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMTEnMzYuOSJTIDEwN8KwMTcnMjIuNCJF!5e0!3m2!1sid!2sid!4v1745164450931!5m2!1sid!2sid" width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3966.529874607578!2d107.28699017499018!3d-6.193594893794062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMTEnMzYuOSJTIDEwN8KwMTcnMjIuNCJF!5e0!3m2!1sid!2sid!4v1745164450931!5m2!1sid!2sid" width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" rel="noopener"></iframe>
             </div>
           </div>
         </div>
@@ -700,7 +881,9 @@
             <ul class="space-y-2">
               <li><a href="#home" class="text-gray-200 hover:text-white transition">Home</a></li>
               <li><a href="#about" class="text-gray-200 hover:text-white transition">About Us</a></li>
+              <li><a href="#vision-mission" class="text-gray-200 hover:text-white transition">Vision & Mission</a></li>
               <li><a href="#products" class="text-gray-200 hover:text-white transition">Products</a></li>
+              <li><a href="#values" class="text-gray-200 hover:text-white transition">Our Values</a></li>
               <li><a href="#gallery" class="text-gray-200 hover:text-white transition">Gallery</a></li>
               <li><a href="#testimonials" class="text-gray-200 hover:text-white transition">Testimonials</a></li>
               <li><a href="#contact" class="text-gray-200 hover:text-white transition">Contact</a></li>
@@ -795,22 +978,7 @@
       const worldText = document.getElementById("world-text");
 
       window.addEventListener("scroll", () => {
-        // Header background - transparent at top, dark green when scrolled
-        if (window.scrollY > 50) {
-          header.classList.add("scrolled");
-          header.classList.add("bg-[#1a4731]");
-          header.classList.remove("bg-transparent");
-          worldText.classList.remove("text-primary-green");
-          worldText.classList.add("text-white");
-        } else {
-          header.classList.remove("scrolled");
-          header.classList.remove("bg-[#1a4731]");
-          header.classList.add("bg-transparent");
-          worldText.classList.add("text-primary-green");
-          worldText.classList.remove("text-white");
-        }
-
-        // Back to top button
+        // Back to top button visibility
         if (window.scrollY > 300) {
           backToTopButton.classList.remove("opacity-0");
           backToTopButton.classList.add("opacity-100");

@@ -49,11 +49,11 @@ window.addEventListener("scroll", () => {
   // Header background - transparent at top, dark green when scrolled
   if (window.scrollY > 50) {
     header.classList.add("scrolled");
-    header.classList.add("bg-[#1a4731]");
+    header.classList.add("bg-[#457801]");
     header.classList.remove("bg-transparent");
   } else {
     header.classList.remove("scrolled");
-    header.classList.remove("bg-[#1a4731]");
+    header.classList.remove("bg-[#457801]");
     header.classList.add("bg-transparent");
   }
 
