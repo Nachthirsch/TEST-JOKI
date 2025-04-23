@@ -793,7 +793,72 @@ solutions for healthier soil and a greener planet.</span>
           <p class="text-gray-600 max-w-2xl mx-auto">Explore our collection of images showcasing our products and their application in various settings.</p>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <!-- Mobile Slider (visible on small screens) -->
+        <div class="md:hidden relative">
+          <div class="mobile-gallery-slider overflow-hidden">
+            <div class="mobile-gallery-track flex transition-transform duration-300">
+              <!-- Mobile Slider Images -->
+              <div class="mobile-gallery-slide min-w-full px-2">
+                <img src="img/1.jpg" alt="1" class="w-full h-64 object-cover rounded-lg shadow-md" />
+              </div>
+              <div class="mobile-gallery-slide min-w-full px-2">
+                <img src="img/13.jpg" alt="13" class="w-full h-64 object-cover rounded-lg shadow-md" />
+              </div>
+              <div class="mobile-gallery-slide min-w-full px-2">
+                <img src="img/15.jpg" alt="15" class="w-full h-64 object-cover rounded-lg shadow-md" />
+              </div>
+              <div class="mobile-gallery-slide min-w-full px-2">
+                <img src="img/16.jpg" alt="16" class="w-full h-64 object-cover rounded-lg shadow-md" />
+              </div>
+              <div class="mobile-gallery-slide min-w-full px-2">
+                <img src="img/17.jpg" alt="17" class="w-full h-64 object-cover rounded-lg shadow-md" />
+              </div>
+              <div class="mobile-gallery-slide min-w-full px-2">
+                <img src="img/18.jpg" alt="18" class="w-full h-64 object-cover rounded-lg shadow-md" />
+              </div>
+              <div class="mobile-gallery-slide min-w-full px-2">
+                <img src="img/2.jpg" alt="2" class="w-full h-64 object-cover rounded-lg shadow-md" />
+              </div>
+              <div class="mobile-gallery-slide min-w-full px-2">
+                <img src="img/3.jpg" alt="3" class="w-full h-64 object-cover rounded-lg shadow-md" />
+              </div>
+              <div class="mobile-gallery-slide min-w-full px-2">
+                <img src="img/4.jpg" alt="4" class="w-full h-64 object-cover rounded-lg shadow-md" />
+              </div>
+              <div class="mobile-gallery-slide min-w-full px-2">
+                <img src="img/5.jpg" alt="5" class="w-full h-64 object-cover rounded-lg shadow-md" />
+              </div>
+              <div class="mobile-gallery-slide min-w-full px-2">
+                <img src="img/6.jpg" alt="6" class="w-full h-64 object-cover rounded-lg shadow-md" />
+              </div>
+              <div class="mobile-gallery-slide min-w-full px-2">
+                <img src="img/9.jpg" alt="9" class="w-full h-64 object-cover rounded-lg shadow-md" />
+              </div>
+              <div class="mobile-gallery-slide min-w-full px-2">
+                <img src="img/Aglaonema.jpg" alt="Aglaonema" class="w-full h-64 object-cover rounded-lg shadow-md" />
+              </div>
+              <div class="mobile-gallery-slide min-w-full px-2">
+                <img src="img/Fine-Organic-Manure.jpg" alt="Fine Organic Manure" class="w-full h-64 object-cover rounded-lg shadow-md" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Mobile Navigation Controls -->
+          <button class="mobile-gallery-prev absolute left-0 top-1/2 transform -translate-y-1/2 bg-white/80 p-2 rounded-r-lg shadow-md text-primary-green">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="mobile-gallery-next absolute right-0 top-1/2 transform -translate-y-1/2 bg-white/80 p-2 rounded-l-lg shadow-md text-primary-green">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+
+          <!-- Mobile Indicator Dots -->
+          <div class="mobile-gallery-dots flex justify-center mt-4 space-x-2">
+            <!-- Dots will be added dynamically with JavaScript -->
+          </div>
+        </div>
+
+        <!-- Desktop Grid (hidden on small screens) -->
+        <div class="hidden md:grid grid-cols-2 md:grid-cols-3 gap-4">
           <!-- Gallery Images -->
           <div class="gallery-item">
             <img src="img/1.jpg" alt="1" class="w-full h-64 object-cover rounded-lg cursor-pointer shadow-md hover:shadow-lg transition" />
@@ -1248,14 +1313,97 @@ solutions for healthier soil and a greener planet.</span>
       mobileMenuButton.addEventListener("click", () => {
         mobileMenu.classList.toggle("hidden");
       });
-
-      // Close mobile menu when clicking a menu item
-      const mobileMenuItems = mobileMenu.querySelectorAll("a");
-      mobileMenuItems.forEach((item) => {
-        item.addEventListener("click", () => {
-          mobileMenu.classList.add("hidden");
+      
+      // Mobile Gallery Slider
+      document.addEventListener("DOMContentLoaded", function() {
+        const sliderTrack = document.querySelector('.mobile-gallery-track');
+        const slides = document.querySelectorAll('.mobile-gallery-slide');
+        const prevButton = document.querySelector('.mobile-gallery-prev');
+        const nextButton = document.querySelector('.mobile-gallery-next');
+        const dotsContainer = document.querySelector('.mobile-gallery-dots');
+        
+        if (!sliderTrack || !slides.length) return;
+        
+        let currentIndex = 0;
+        const totalSlides = slides.length;
+        
+        // Create indicator dots
+        for (let i = 0; i < totalSlides; i++) {
+          const dot = document.createElement('button');
+          dot.classList.add('w-2', 'h-2', 'rounded-full', 'bg-gray-300');
+          if (i === 0) dot.classList.add('bg-primary-green');
+          dot.setAttribute('data-index', i);
+          dot.addEventListener('click', () => {
+            goToSlide(i);
+          });
+          dotsContainer.appendChild(dot);
+        }
+        
+        // Next slide function
+        function nextSlide() {
+          currentIndex = (currentIndex + 1) % totalSlides;
+          goToSlide(currentIndex);
+        }
+        
+        // Previous slide function
+        function prevSlide() {
+          currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+          goToSlide(currentIndex);
+        }
+        
+        // Go to specific slide
+        function goToSlide(index) {
+          currentIndex = index;
+          sliderTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+          
+          // Update active dot
+          document.querySelectorAll('.mobile-gallery-dots button').forEach((dot, i) => {
+            if (i === currentIndex) {
+              dot.classList.remove('bg-gray-300');
+              dot.classList.add('bg-primary-green');
+            } else {
+              dot.classList.remove('bg-primary-green');
+              dot.classList.add('bg-gray-300');
+            }
+          });
+        }
+        
+        // Add event listeners to navigation buttons
+        if (prevButton) prevButton.addEventListener('click', prevSlide);
+        if (nextButton) nextButton.addEventListener('click', nextSlide);
+        
+        // Add touch/swipe support
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        sliderTrack.addEventListener('touchstart', (e) => {
+          touchStartX = e.changedTouches[0].screenX;
+        });
+        
+        sliderTrack.addEventListener('touchend', (e) => {
+          touchEndX = e.changedTouches[0].screenX;
+          handleSwipe();
+        });
+        
+        function handleSwipe() {
+          if (touchStartX - touchEndX > 50) {
+            nextSlide();
+          } else if (touchEndX - touchStartX > 50) {
+            prevSlide();
+          }
+        }
+        
+        // Auto-advance slides every 5 seconds
+        const autoSlideInterval = setInterval(nextSlide, 5000);
+        
+        // Pause auto-advance when user interacts with slider
+        const sliderContainer = document.querySelector('.mobile-gallery-slider');
+        sliderContainer.addEventListener('mouseenter', () => {
+          clearInterval(autoSlideInterval);
         });
       });
+      
+      // ... existing code ...
 
       // Header Background Change on Scroll
       const header = document.getElementById("header");
