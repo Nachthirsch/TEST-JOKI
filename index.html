@@ -24,7 +24,7 @@
       .border-primary-green {
         border-color: #457801 !important;
       }
-      
+
       /* Custom Styling untuk Section Titles */
       .section-title {
         position: relative;
@@ -34,7 +34,7 @@
         font-weight: 700;
         letter-spacing: 0.5px;
       }
-      
+
       .section-title::before {
         content: "";
         position: absolute;
@@ -46,24 +46,24 @@
         transform: translateX(-50%);
         border-radius: 2px;
       }
-      
+
       .section-title::after {
         content: "";
         position: absolute;
         width: 30px;
         height: 3px;
-        background-color: #8B5A2B; /* Primary brown color */
+        background-color: #8b5a2b; /* Primary brown color */
         bottom: -8px;
         left: 50%;
         transform: translateX(-50%);
         border-radius: 2px;
       }
-      
+
       .section-title-wrapper {
         position: relative;
         margin-bottom: 2rem;
       }
-      
+
       .section-title-icon {
         display: inline-flex;
         align-items: center;
@@ -79,20 +79,20 @@
         left: 50%;
         transform: translateX(-50%);
         border: 3px solid white;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
         z-index: 1;
         transition: transform 0.3s ease;
       }
-      
+
       .section-title-icon:hover {
         transform: translateX(-50%) scale(1.1);
       }
-      
+
       .section-title-bg {
         position: relative;
         padding: 1.5rem 0;
       }
-      
+
       .section-title-bg::before {
         content: "";
         position: absolute;
@@ -105,17 +105,17 @@
         transform: translateX(-50%);
         z-index: 0;
       }
-      
+
       .section-title-text {
         position: relative;
         z-index: 1;
       }
-      
+
       .highlight-text {
         position: relative;
         display: inline-block;
       }
-      
+
       .highlight-text::after {
         content: "";
         position: absolute;
@@ -126,7 +126,7 @@
         background-color: rgba(69, 120, 1, 0.2);
         z-index: -1;
       }
-      
+
       /* Mobile Responsiveness Improvements */
       @media (max-width: 640px) {
         .section-title {
@@ -134,55 +134,56 @@
           padding-bottom: 10px;
           margin-bottom: 20px;
         }
-        
+
         .section-title::before {
           width: 50px;
           height: 2px;
         }
-        
+
         .section-title::after {
           width: 25px;
           height: 2px;
           bottom: -6px;
         }
-        
+
         .section-title-icon {
           width: 40px;
           height: 40px;
           font-size: 1.25rem;
           top: -20px;
         }
-        
+
         .section-title-bg::before {
           width: 100px;
         }
-        
+
         .py-20 {
           padding-top: 3rem !important;
           padding-bottom: 3rem !important;
         }
-        
+
         .py-16 {
           padding-top: 2.5rem !important;
           padding-bottom: 2.5rem !important;
         }
-        
+
         .mb-16 {
           margin-bottom: 2rem !important;
         }
-        
-        .gap-12, .gap-16 {
+
+        .gap-12,
+        .gap-16 {
           gap: 1.5rem !important;
         }
-        
+
         .text-4xl {
           font-size: 1.75rem !important;
         }
-        
+
         .text-3xl {
           font-size: 1.5rem !important;
         }
-        
+
         .px-8 {
           padding-left: 1rem !important;
           padding-right: 1rem !important;
@@ -333,16 +334,16 @@
 
           <div class="lg:w-3/5 mt-8 lg:mt-0">
             <h3 class="text-2xl md:text-3xl font-semibold mb-6 text-primary-brown">Our Story</h3>
-            
+
             <div class="space-y-4 text-gray-700 leading-relaxed">
               <p>MonicaWorld was born out of a deep concern for the environment and a determination to promote sustainable agriculture. Starting as a small initiative in Bekasi, we have grown into a movement—transforming organic waste into fertilizer that nurtures life through a natural fermentation process.</p>
-              
+
               <p>Our factory has been operating since 2019, with a vision to produce high-quality organic fertilizer from natural ingredients such as goat manure, cocopeat, and volcanic soil. For several years, we have focused on perfecting our production process and maintaining consistent product quality.</p>
-              
+
               <p>Now, in 2025, we are taking a big step to expand our reach internationally. MonicaWorld has begun exporting to several countries, including Japan, China, Switzerland, Australia, Malaysia, and Singapore.</p>
-              
+
               <p>As a growing local business, we are committed to providing environmentally friendly agricultural solutions, enriching the soil, and supporting farmers in achieving better harvests naturally. We believe the future of agriculture lies in harmony between people, nature, and the land.</p>
-              
+
               <p>With a production capacity of 20 tons per month, MonicaWorld is proud to prove that local innovation can grow and bring benefits to the world—from our soil, for your harvest.</p>
             </div>
 
@@ -363,60 +364,55 @@
 
             <!-- Script untuk animasi counting -->
             <script>
-              document.addEventListener('DOMContentLoaded', function() {
+              document.addEventListener("DOMContentLoaded", function () {
                 // Fungsi untuk memeriksa apakah elemen dalam tampilan
                 function isInViewport(element) {
                   const rect = element.getBoundingClientRect();
-                  return (
-                    rect.top >= 0 &&
-                    rect.left >= 0 &&
-                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-                  );
+                  return rect.top >= 0 && rect.left >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && rect.right <= (window.innerWidth || document.documentElement.clientWidth);
                 }
-                
+
                 // Fungsi untuk animasi counting
                 function startCounting() {
-                  const counters = document.querySelectorAll('.count-up');
+                  const counters = document.querySelectorAll(".count-up");
                   const speed = 70; // Semakin kecil semakin cepat
-                  
-                  counters.forEach(counter => {
+
+                  counters.forEach((counter) => {
                     if (!counter.dataset.counted && isInViewport(counter)) {
                       counter.dataset.counted = true;
-                      const target = parseInt(counter.getAttribute('data-target'));
+                      const target = parseInt(counter.getAttribute("data-target"));
                       let count = 0;
-                      
+
                       // Sesuaikan increment berdasarkan target
                       let increment = target;
                       if (target > 1000) increment = Math.ceil(target / 50);
                       else if (target > 100) increment = Math.ceil(target / 25);
                       else increment = 1;
-                      
+
                       const updateCount = () => {
                         if (count < target) {
                           count += increment;
                           // Pastikan tidak melebihi target
                           if (count > target) count = target;
-                          
+
                           // Format untuk ribuan
                           if (target >= 1000) {
-                            counter.innerText = count >= 1000 ? (count / 1000) + 'k' : count;
+                            counter.innerText = count >= 1000 ? count / 1000 + "k" : count;
                           } else {
                             counter.innerText = count;
                           }
-                          
+
                           setTimeout(updateCount, speed);
                         }
                       };
-                      
+
                       updateCount();
                     }
                   });
                 }
-                
+
                 // Mulai counting saat scroll
-                window.addEventListener('scroll', startCounting);
-                
+                window.addEventListener("scroll", startCounting);
+
                 // Jalankan sekali saat halaman dimuat
                 startCounting();
               });
@@ -457,8 +453,7 @@
             <ul class="text-gray-700 space-y-3">
               <li class="flex items-start">
                 <i class="fas fa-check-circle text-primary-green mt-1 mr-2"></i>
-                <span>To be a pioneer in eco-friendly organic farming
-solutions for healthier soil and a greener planet.</span>
+                <span>To be a pioneer in eco-friendly organic farming solutions for healthier soil and a greener planet.</span>
               </li>
             </ul>
           </div>
@@ -508,7 +503,7 @@ solutions for healthier soil and a greener planet.</span>
           </div>
           <p class="text-gray-600 max-w-2xl mx-auto">We provide comprehensive services to support sustainable agricultural practices and environmentally-friendly products.</p>
         </div>
-        
+
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <!-- Service 1 -->
           <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:transform hover:scale-105">
@@ -520,7 +515,7 @@ solutions for healthier soil and a greener planet.</span>
               <p class="text-gray-600 text-center">Expert guidance on sustainable farming practices, soil management, and crop optimization.</p>
             </div>
           </div>
-          
+
           <!-- Service 2 -->
           <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:transform hover:scale-105">
             <div class="p-6">
@@ -531,7 +526,7 @@ solutions for healthier soil and a greener planet.</span>
               <p class="text-gray-600 text-center">Timely and reliable distribution of our organic agricultural products to farmers nationwide.</p>
             </div>
           </div>
-          
+
           <!-- Service 3 -->
           <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:transform hover:scale-105">
             <div class="p-6">
@@ -542,7 +537,7 @@ solutions for healthier soil and a greener planet.</span>
               <p class="text-gray-600 text-center">Tailored organic fertilizer and soil amendment solutions based on specific soil analysis.</p>
             </div>
           </div>
-          
+
           <!-- Service 4 -->
           <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:transform hover:scale-105">
             <div class="p-6">
@@ -553,7 +548,7 @@ solutions for healthier soil and a greener planet.</span>
               <p class="text-gray-600 text-center">Assistance with organic certification processes and compliance with sustainable practices.</p>
             </div>
           </div>
-          
+
           <!-- Service 5 -->
           <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:transform hover:scale-105">
             <div class="p-6">
@@ -564,7 +559,7 @@ solutions for healthier soil and a greener planet.</span>
               <p class="text-gray-600 text-center">Educational workshops and training sessions on eco-friendly farming techniques.</p>
             </div>
           </div>
-          
+
           <!-- Service 6 -->
           <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:transform hover:scale-105">
             <div class="p-6">
@@ -576,15 +571,13 @@ solutions for healthier soil and a greener planet.</span>
             </div>
           </div>
         </div>
-        
+
         <div class="mt-12 text-center">
-          <a href="#contact" class="inline-block px-6 py-3 bg-primary-green text-white font-medium rounded-md shadow-md hover:bg-primary-brown transition-colors duration-300">
-            <i class="fas fa-phone-alt mr-2"></i>Contact Us For Services
-          </a>
+          <a href="#contact" class="inline-block px-6 py-3 bg-primary-green text-white font-medium rounded-md shadow-md hover:bg-primary-brown transition-colors duration-300"> <i class="fas fa-phone-alt mr-2"></i>Contact Us For Services </a>
         </div>
       </div>
     </section>
-    
+
     <!-- Products Section -->
     <section id="products" class="py-20 bg-gradient-to-b from-white to-gray-50 relative">
       <!-- Decorative Background Elements -->
@@ -624,10 +617,7 @@ solutions for healthier soil and a greener planet.</span>
                 <span class="flex items-center"><i class="fas fa-box mr-1 text-primary-green"></i> 5Kg - 10Kg Packaging</span>
               </div>
 
-              <p class="text-gray-600 mb-6">Goat manure fertilizer offers several advantages for agricultural use. It is 100% organic and completely free from chemical additives. Thanks to a thorough fermentation process, it emits no foul odor, making it pleasant to handle and apply. This natural fertilizer enriches the soil and promotes the growth of beneficial microorganisms, enhancing overall soil health. Available in two variants—coarse and fine—it can be tailored to suit different cultivation needs.
-
-                This fertilizer is ideal for a wide range of plants, including fruit and vegetable crops, ornamental plants, and even hardy trees such as coconut and coffee.</p>
-
+              <p class="text-gray-600 mb-6">Goat manure fertilizer offers several advantages for agricultural use. It is 100% organic and completely free from chemical additives. Thanks to a thorough fermentation process, it emits no foul odor, making it pleasant to handle and apply. This natural fertilizer enriches the soil and promotes the growth of beneficial microorganisms, enhancing overall soil health. Available in two variants—coarse and fine—it can be tailored to suit different cultivation needs. This fertilizer is ideal for a wide range of plants, including fruit and vegetable crops, ornamental plants, and even hardy trees such as coconut and coffee.</p>
 
               <div class="flex items-center justify-between">
                 <div class="flex items-center">
@@ -662,9 +652,7 @@ solutions for healthier soil and a greener planet.</span>
                 <span class="flex items-center"><i class="fas fa-box mr-1 text-primary-green"></i>5Kg - 10Kg Packaging</span>
               </div>
 
-              <p class="text-gray-600 mb-6">Goat manure fertilizer offers several advantages for agricultural use. It is 100% organic and completely free from chemical additives. Thanks to a thorough fermentation process, it emits no foul odor, making it pleasant to handle and apply. This natural fertilizer enriches the soil and promotes the growth of beneficial microorganisms, enhancing overall soil health. Available in two variants—coarse and fine—it can be tailored to suit different cultivation needs.
-
-                This fertilizer is ideal for a wide range of plants, including fruit and vegetable crops, ornamental plants, and even hardy trees such as coconut and coffee.</p>
+              <p class="text-gray-600 mb-6">Goat manure fertilizer offers several advantages for agricultural use. It is 100% organic and completely free from chemical additives. Thanks to a thorough fermentation process, it emits no foul odor, making it pleasant to handle and apply. This natural fertilizer enriches the soil and promotes the growth of beneficial microorganisms, enhancing overall soil health. Available in two variants—coarse and fine—it can be tailored to suit different cultivation needs. This fertilizer is ideal for a wide range of plants, including fruit and vegetable crops, ornamental plants, and even hardy trees such as coconut and coffee.</p>
 
               <div class="flex items-center justify-between">
                 <div class="flex items-center">
@@ -699,9 +687,7 @@ solutions for healthier soil and a greener planet.</span>
                 <span class="flex items-center"><i class="fas fa-box mr-1 text-primary-green"></i> 5Kg - 10Kg Packaging</span>
               </div>
 
-              <p class="text-gray-600 mb-6">MonicaWorld Organic Cocopeat Fertilizer is an eco-friendly and 100% organic solution for plant cultivation. It combines high-quality cocopeat with nutrient-rich materials to provide a balanced and effective growing medium. Odorless and safe for all types of plants, this fertilizer ensures a clean and comfortable gardening experience. It is available in two variants—coarse and fine—to suit various planting methods and preferences.
-
-                This organic fertilizer is ideal for horticultural plants, fruits, vegetables, ornamental plants, and even hydroponic systems.</p>
+              <p class="text-gray-600 mb-6">MonicaWorld Organic Cocopeat Fertilizer is an eco-friendly and 100% organic solution for plant cultivation. It combines high-quality cocopeat with nutrient-rich materials to provide a balanced and effective growing medium. Odorless and safe for all types of plants, this fertilizer ensures a clean and comfortable gardening experience. It is available in two variants—coarse and fine—to suit various planting methods and preferences. This organic fertilizer is ideal for horticultural plants, fruits, vegetables, ornamental plants, and even hydroponic systems.</p>
 
               <div class="flex items-center justify-between">
                 <div class="flex items-center">
@@ -736,10 +722,8 @@ solutions for healthier soil and a greener planet.</span>
                 <span class="flex items-center"><i class="fas fa-box mr-1 text-primary-green"></i> 5Kg - 10Kg Packaging</span>
               </div>
 
-              <p class="text-gray-600 mb-6">MonicaWorld Organic Cocopeat Fertilizer is an eco-friendly and 100% organic solution for plant cultivation. It combines high-quality cocopeat with nutrient-rich materials to provide a balanced and effective growing medium. Odorless and safe for all types of plants, this fertilizer ensures a clean and comfortable gardening experience. It is available in two variants—coarse and fine—to suit various planting methods and preferences.
+              <p class="text-gray-600 mb-6">MonicaWorld Organic Cocopeat Fertilizer is an eco-friendly and 100% organic solution for plant cultivation. It combines high-quality cocopeat with nutrient-rich materials to provide a balanced and effective growing medium. Odorless and safe for all types of plants, this fertilizer ensures a clean and comfortable gardening experience. It is available in two variants—coarse and fine—to suit various planting methods and preferences. This organic fertilizer is ideal for horticultural plants, fruits, vegetables, ornamental plants, and even hydroponic systems.</p>
 
-                This organic fertilizer is ideal for horticultural plants, fruits, vegetables, ornamental plants, and even hydroponic systems.</p>
-              
               <div class="flex items-center justify-between">
                 <div class="flex items-center">
                   <div class="flex">
@@ -772,9 +756,7 @@ solutions for healthier soil and a greener planet.</span>
                 <span class="flex items-center"><i class="fas fa-box mr-1 text-primary-green"></i> 5Kg - 10Kg Packaging</span>
               </div>
 
-              <p class="text-gray-600 mb-6">Sourced from the naturally fertile lands of Lembang, this soil is rich in nutrients and beneficial microbes, making it an ideal growing medium. It is ready to use without the need for additional chemical fertilizers, offering a convenient and natural solution for plant cultivation. Suitable for all types of plants, this soil promotes healthy growth and sustainable gardening.
-
-                Perfect for ornamental plants, vegetables, cut flowers, potted fruit plants (tabulampot), and bonsai.</p>
+              <p class="text-gray-600 mb-6">Sourced from the naturally fertile lands of Lembang, this soil is rich in nutrients and beneficial microbes, making it an ideal growing medium. It is ready to use without the need for additional chemical fertilizers, offering a convenient and natural solution for plant cultivation. Suitable for all types of plants, this soil promotes healthy growth and sustainable gardening. Perfect for ornamental plants, vegetables, cut flowers, potted fruit plants (tabulampot), and bonsai.</p>
 
               <div class="flex items-center justify-between">
                 <div class="flex items-center">
@@ -1035,7 +1017,6 @@ solutions for healthier soil and a greener planet.</span>
       </div>
     </section>
 
-
     <!-- Contact Section -->
     <section id="contact" class="py-16 bg-gray-50">
       <div class="container mx-auto px-4 sm:px-6 lg:px-20">
@@ -1162,10 +1143,8 @@ solutions for healthier soil and a greener planet.</span>
               <h2 class="text-2xl font-bold tracking-wider">Monica<span class="font-light">World</span></h2>
               <div class="w-1.5 h-1.5 rounded-full bg-white ml-2 animate-pulse"></div>
             </div>
-            <p class="text-gray-200 leading-relaxed text-center md:text-left">
-              Nurturing soil for a sustainable future. Premium organic solutions for your crops and gardens, crafted with care for nature and people.
-            </p>
-            
+            <p class="text-gray-200 leading-relaxed text-center md:text-left">Nurturing soil for a sustainable future. Premium organic solutions for your crops and gardens, crafted with care for nature and people.</p>
+
             <!-- Social Media Icons -->
             <div class="flex space-x-5 justify-center md:justify-start">
               <a href="#" class="hover:text-green-200 transition-colors duration-300" aria-label="Visit our Instagram">
@@ -1187,13 +1166,27 @@ solutions for healthier soil and a greener planet.</span>
           <div class="md:col-span-3 md:ml-5">
             <h3 class="text-lg font-semibold mb-4 text-center md:text-left">Quick Links</h3>
             <ul class="space-y-2 text-center md:text-left grid grid-cols-2 md:grid-cols-1 gap-2">
-              <li><a href="#home" class="text-gray-200 hover:text-white transition-colors duration-300 inline-block"><i class="fas fa-chevron-right text-xs mr-2 opacity-60"></i>Home</a></li>
-              <li><a href="#about" class="text-gray-200 hover:text-white transition-colors duration-300 inline-block"><i class="fas fa-chevron-right text-xs mr-2 opacity-60"></i>About Us</a></li>
-              <li><a href="#vision-mission" class="text-gray-200 hover:text-white transition-colors duration-300 inline-block"><i class="fas fa-chevron-right text-xs mr-2 opacity-60"></i>Vision & Mission</a></li>
-              <li><a href="#products" class="text-gray-200 hover:text-white transition-colors duration-300 inline-block"><i class="fas fa-chevron-right text-xs mr-2 opacity-60"></i>Products</a></li>
-              <li><a href="#values" class="text-gray-200 hover:text-white transition-colors duration-300 inline-block"><i class="fas fa-chevron-right text-xs mr-2 opacity-60"></i>Our Values</a></li>
-              <li><a href="#gallery" class="text-gray-200 hover:text-white transition-colors duration-300 inline-block"><i class="fas fa-chevron-right text-xs mr-2 opacity-60"></i>Gallery</a></li>
-              <li><a href="#contact" class="text-gray-200 hover:text-white transition-colors duration-300 inline-block"><i class="fas fa-chevron-right text-xs mr-2 opacity-60"></i>Contact</a></li>
+              <li>
+                <a href="#home" class="text-gray-200 hover:text-white transition-colors duration-300 inline-block"><i class="fas fa-chevron-right text-xs mr-2 opacity-60"></i>Home</a>
+              </li>
+              <li>
+                <a href="#about" class="text-gray-200 hover:text-white transition-colors duration-300 inline-block"><i class="fas fa-chevron-right text-xs mr-2 opacity-60"></i>About Us</a>
+              </li>
+              <li>
+                <a href="#vision-mission" class="text-gray-200 hover:text-white transition-colors duration-300 inline-block"><i class="fas fa-chevron-right text-xs mr-2 opacity-60"></i>Vision & Mission</a>
+              </li>
+              <li>
+                <a href="#products" class="text-gray-200 hover:text-white transition-colors duration-300 inline-block"><i class="fas fa-chevron-right text-xs mr-2 opacity-60"></i>Products</a>
+              </li>
+              <li>
+                <a href="#values" class="text-gray-200 hover:text-white transition-colors duration-300 inline-block"><i class="fas fa-chevron-right text-xs mr-2 opacity-60"></i>Our Values</a>
+              </li>
+              <li>
+                <a href="#gallery" class="text-gray-200 hover:text-white transition-colors duration-300 inline-block"><i class="fas fa-chevron-right text-xs mr-2 opacity-60"></i>Gallery</a>
+              </li>
+              <li>
+                <a href="#contact" class="text-gray-200 hover:text-white transition-colors duration-300 inline-block"><i class="fas fa-chevron-right text-xs mr-2 opacity-60"></i>Contact</a>
+              </li>
             </ul>
           </div>
 
@@ -1221,17 +1214,11 @@ solutions for healthier soil and a greener planet.</span>
         <div class="text-center">
           <!-- Footer Links -->
           <div class="flex flex-wrap justify-center gap-3 md:gap-8 mb-6">
-            <a href="#" class="text-sm text-gray-300 hover:text-white transition-colors duration-300">
-              Privacy Policy
-            </a>
-            <a href="#" class="text-sm text-gray-300 hover:text-white transition-colors duration-300">
-              Terms of Service
-            </a>
-            <a href="#" class="text-sm text-gray-300 hover:text-white transition-colors duration-300">
-              FAQ
-            </a>
+            <a href="#" class="text-sm text-gray-300 hover:text-white transition-colors duration-300"> Privacy Policy </a>
+            <a href="#" class="text-sm text-gray-300 hover:text-white transition-colors duration-300"> Terms of Service </a>
+            <a href="#" class="text-sm text-gray-300 hover:text-white transition-colors duration-300"> FAQ </a>
           </div>
-          
+
           <p class="text-sm text-gray-300 mb-3">&copy; 2023 MonicaWorld Organic Fertilizer. All rights reserved.</p>
           <div class="text-xs text-gray-400 py-2 mx-auto max-w-xs">Nurturing soil • Growing future • Sustaining nature</div>
         </div>
@@ -1281,78 +1268,78 @@ solutions for healthier soil and a greener planet.</span>
       mobileMenuButton.addEventListener("click", () => {
         mobileMenu.classList.toggle("hidden");
       });
-      
+
       // Mobile Gallery Slider
-      document.addEventListener("DOMContentLoaded", function() {
-        const sliderTrack = document.querySelector('.mobile-gallery-track');
-        const slides = document.querySelectorAll('.mobile-gallery-slide');
-        const prevButton = document.querySelector('.mobile-gallery-prev');
-        const nextButton = document.querySelector('.mobile-gallery-next');
-        const dotsContainer = document.querySelector('.mobile-gallery-dots');
-        
+      document.addEventListener("DOMContentLoaded", function () {
+        const sliderTrack = document.querySelector(".mobile-gallery-track");
+        const slides = document.querySelectorAll(".mobile-gallery-slide");
+        const prevButton = document.querySelector(".mobile-gallery-prev");
+        const nextButton = document.querySelector(".mobile-gallery-next");
+        const dotsContainer = document.querySelector(".mobile-gallery-dots");
+
         if (!sliderTrack || !slides.length) return;
-        
+
         let currentIndex = 0;
         const totalSlides = slides.length;
-        
+
         // Create indicator dots
         for (let i = 0; i < totalSlides; i++) {
-          const dot = document.createElement('button');
-          dot.classList.add('w-2', 'h-2', 'rounded-full', 'bg-gray-300');
-          if (i === 0) dot.classList.add('bg-primary-green');
-          dot.setAttribute('data-index', i);
-          dot.addEventListener('click', () => {
+          const dot = document.createElement("button");
+          dot.classList.add("w-2", "h-2", "rounded-full", "bg-gray-300");
+          if (i === 0) dot.classList.add("bg-primary-green");
+          dot.setAttribute("data-index", i);
+          dot.addEventListener("click", () => {
             goToSlide(i);
           });
           dotsContainer.appendChild(dot);
         }
-        
+
         // Next slide function
         function nextSlide() {
           currentIndex = (currentIndex + 1) % totalSlides;
           goToSlide(currentIndex);
         }
-        
+
         // Previous slide function
         function prevSlide() {
           currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
           goToSlide(currentIndex);
         }
-        
+
         // Go to specific slide
         function goToSlide(index) {
           currentIndex = index;
           sliderTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
-          
+
           // Update active dot
-          document.querySelectorAll('.mobile-gallery-dots button').forEach((dot, i) => {
+          document.querySelectorAll(".mobile-gallery-dots button").forEach((dot, i) => {
             if (i === currentIndex) {
-              dot.classList.remove('bg-gray-300');
-              dot.classList.add('bg-primary-green');
+              dot.classList.remove("bg-gray-300");
+              dot.classList.add("bg-primary-green");
             } else {
-              dot.classList.remove('bg-primary-green');
-              dot.classList.add('bg-gray-300');
+              dot.classList.remove("bg-primary-green");
+              dot.classList.add("bg-gray-300");
             }
           });
         }
-        
+
         // Add event listeners to navigation buttons
-        if (prevButton) prevButton.addEventListener('click', prevSlide);
-        if (nextButton) nextButton.addEventListener('click', nextSlide);
-        
+        if (prevButton) prevButton.addEventListener("click", prevSlide);
+        if (nextButton) nextButton.addEventListener("click", nextSlide);
+
         // Add touch/swipe support
         let touchStartX = 0;
         let touchEndX = 0;
-        
-        sliderTrack.addEventListener('touchstart', (e) => {
+
+        sliderTrack.addEventListener("touchstart", (e) => {
           touchStartX = e.changedTouches[0].screenX;
         });
-        
-        sliderTrack.addEventListener('touchend', (e) => {
+
+        sliderTrack.addEventListener("touchend", (e) => {
           touchEndX = e.changedTouches[0].screenX;
           handleSwipe();
         });
-        
+
         function handleSwipe() {
           if (touchStartX - touchEndX > 50) {
             nextSlide();
@@ -1360,17 +1347,17 @@ solutions for healthier soil and a greener planet.</span>
             prevSlide();
           }
         }
-        
+
         // Auto-advance slides every 5 seconds
         const autoSlideInterval = setInterval(nextSlide, 5000);
-        
+
         // Pause auto-advance when user interacts with slider
-        const sliderContainer = document.querySelector('.mobile-gallery-slider');
-        sliderContainer.addEventListener('mouseenter', () => {
+        const sliderContainer = document.querySelector(".mobile-gallery-slider");
+        sliderContainer.addEventListener("mouseenter", () => {
           clearInterval(autoSlideInterval);
         });
       });
-      
+
       // ... existing code ...
 
       // Header Background Change on Scroll
@@ -1471,62 +1458,6 @@ solutions for healthier soil and a greener planet.</span>
           nextImage.click();
         }
       });
-
-      // Testimonials Slider
-      const testimonialSlider = document.getElementById("testimonial-slider");
-      const testimonialDots = document.querySelectorAll(".testimonial-dot");
-      const testimonialSlides = document.querySelectorAll(".testimonial-slide");
-      let currentTestimonialIndex = 0;
-
-      // Initialize dots
-      testimonialDots[0].classList.add("bg-primary-green");
-
-      // Function to update slider position
-      function updateTestimonialSlider() {
-        const slideWidth = testimonialSlides[0].offsetWidth;
-        testimonialSlider.style.transform = `translateX(-${currentTestimonialIndex * slideWidth}px)`;
-
-        // Update active dot
-        testimonialDots.forEach((dot, index) => {
-          if (index === currentTestimonialIndex) {
-            dot.classList.remove("bg-gray-300");
-            dot.classList.add("bg-primary-green");
-          } else {
-            dot.classList.remove("bg-primary-green");
-            dot.classList.add("bg-gray-300");
-          }
-        });
-      }
-
-      // Set up dot click handlers
-      testimonialDots.forEach((dot, index) => {
-        dot.addEventListener("click", () => {
-          currentTestimonialIndex = index;
-          updateTestimonialSlider();
-        });
-      });
-
-      // Auto-rotate testimonials
-      let testimonialInterval = setInterval(() => {
-        currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonialSlides.length;
-        updateTestimonialSlider();
-      }, 5000);
-
-      // Pause auto-rotation on hover
-      const testimonialContainer = document.querySelector("#testimonials .relative");
-      testimonialContainer.addEventListener("mouseenter", () => {
-        clearInterval(testimonialInterval);
-      });
-
-      testimonialContainer.addEventListener("mouseleave", () => {
-        testimonialInterval = setInterval(() => {
-          currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonialSlides.length;
-          updateTestimonialSlider();
-        }, 5000);
-      });
-
-      // Update slider on window resize
-      window.addEventListener("resize", updateTestimonialSlider);
 
       // Contact Form Validation
       const contactForm = document.getElementById("contact-form");
