@@ -3,6 +3,7 @@
 /* Custom colors that match the brand */
 :root {
   --primary-green: #457801;
+  --primary-green-light: #508600;
   --primary-brown: #6b4423;
 }
 
@@ -212,4 +213,8 @@ html {
 .mobile-link.active {
   border-left-color: var(--primary-green, #457801);
   background-color: rgba(69, 120, 1, 0.1);
+}
+
+.text-shadow-white {
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
 }

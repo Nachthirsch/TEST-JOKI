@@ -324,18 +324,21 @@
           <p class="text-gray-600 max-w-2xl mx-auto mt-4">Discover our story and commitment to sustainable organic agriculture solutions.</p>
         </div>
 
-        <div class="flex flex-col lg:flex-row items-start gap-12 lg:gap-16">
-          <div class="lg:w-2/5 group">
-            <div class="relative overflow-hidden rounded-xl shadow-xl">
-              <img src="img/gudang.jpg" alt="Our Factory" class="w-full h-full object-cover rounded-xl transform transition-transform duration-500 group-hover:scale-105" />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
+        <!-- Replace the flexbox with a relative container that has a background image -->
+        <div class="relative rounded-xl overflow-hidden shadow-xl">
+          <!-- Background image -->
+          <div class="absolute inset-0 w-full h-full">
+            <!-- Image should be fully visible but darkened with an overlay -->
+            <img src="img/gudang.jpg" alt="Our Factory" class="w-full h-full object-cover z-0" />
+            <!-- Semi-transparent overlay above the image -->
+            <div class="absolute inset-0 bg-black opacity-50 z-10"></div>
           </div>
 
-          <div class="lg:w-3/5 mt-8 lg:mt-0">
-            <h3 class="text-2xl md:text-3xl font-semibold mb-6 text-primary-brown">Our Story</h3>
+          <!-- Content with proper padding and text styling for visibility -->
+          <div class="relative z-20 p-8 md:p-12 lg:p-16 max-w-3xl">
+            <h3 class="text-2xl md:text-3xl font-semibold mb-6 text-white">Our Story</h3>
 
-            <div class="space-y-4 text-gray-700 leading-relaxed">
+            <div class="space-y-4 text-white leading-relaxed font-medium">
               <p>MonicaWorld was born out of a deep concern for the environment and a determination to promote sustainable agriculture. Starting as a small initiative in Bekasi, we have grown into a movement—transforming organic waste into fertilizer that nurtures life through a natural fermentation process.</p>
 
               <p>Our factory has been operating since 2019, with a vision to produce high-quality organic fertilizer from natural ingredients such as goat manure, cocopeat, and volcanic soil. For several years, we have focused on perfecting our production process and maintaining consistent product quality.</p>
@@ -347,78 +350,78 @@
               <p>With a production capacity of 20 tons per month, MonicaWorld is proud to prove that local innovation can grow and bring benefits to the world—from our soil, for your harvest.</p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 mt-10 bg-white p-6 rounded-lg shadow-md">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 mt-10 bg-black/50 p-6 rounded-lg shadow-md border border-white/20">
               <div class="text-center transform transition-all duration-300 hover:-translate-y-1 py-3">
-                <span class="block text-3xl md:text-4xl font-bold text-primary-green mb-2"><span class="count-up" data-target="12">0</span>+</span>
-                <span class="text-gray-600 text-sm">Years Experience</span>
+                <span class="block text-3xl md:text-4xl font-bold text-green-300 mb-2"><span class="count-up" data-target="12">0</span>+</span>
+                <span class="text-white text-sm font-medium tracking-wide">Years Experience</span>
               </div>
               <div class="text-center transform transition-all duration-300 hover:-translate-y-1 py-3">
-                <span class="block text-3xl md:text-4xl font-bold text-primary-green mb-2"><span class="count-up" data-target="10000">0</span>+</span>
-                <span class="text-gray-600 text-sm">Happy Customers</span>
+                <span class="block text-3xl md:text-4xl font-bold text-green-300 mb-2"><span class="count-up" data-target="12000">0</span>+</span>
+                <span class="text-white text-sm font-medium tracking-wide">Happy Customers</span>
               </div>
               <div class="text-center transform transition-all duration-300 hover:-translate-y-1 py-3">
-                <span class="block text-3xl md:text-4xl font-bold text-primary-green mb-2"><span class="count-up" data-target="100">0</span>%</span>
-                <span class="text-gray-600 text-sm">Organic</span>
+                <span class="block text-3xl md:text-4xl font-bold text-green-300 mb-2"><span class="count-up" data-target="100">0</span>%</span>
+                <span class="text-white text-sm font-medium tracking-wide">Organic</span>
               </div>
             </div>
-
-            <!-- Script untuk animasi counting -->
-            <script>
-              document.addEventListener("DOMContentLoaded", function () {
-                // Fungsi untuk memeriksa apakah elemen dalam tampilan
-                function isInViewport(element) {
-                  const rect = element.getBoundingClientRect();
-                  return rect.top >= 0 && rect.left >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && rect.right <= (window.innerWidth || document.documentElement.clientWidth);
-                }
-
-                // Fungsi untuk animasi counting
-                function startCounting() {
-                  const counters = document.querySelectorAll(".count-up");
-                  const speed = 70; // Semakin kecil semakin cepat
-
-                  counters.forEach((counter) => {
-                    if (!counter.dataset.counted && isInViewport(counter)) {
-                      counter.dataset.counted = true;
-                      const target = parseInt(counter.getAttribute("data-target"));
-                      let count = 0;
-
-                      // Sesuaikan increment berdasarkan target
-                      let increment = target;
-                      if (target > 1000) increment = Math.ceil(target / 50);
-                      else if (target > 100) increment = Math.ceil(target / 25);
-                      else increment = 1;
-
-                      const updateCount = () => {
-                        if (count < target) {
-                          count += increment;
-                          // Pastikan tidak melebihi target
-                          if (count > target) count = target;
-
-                          // Format untuk ribuan
-                          if (target >= 1000) {
-                            counter.innerText = count >= 1000 ? count / 1000 + "k" : count;
-                          } else {
-                            counter.innerText = count;
-                          }
-
-                          setTimeout(updateCount, speed);
-                        }
-                      };
-
-                      updateCount();
-                    }
-                  });
-                }
-
-                // Mulai counting saat scroll
-                window.addEventListener("scroll", startCounting);
-
-                // Jalankan sekali saat halaman dimuat
-                startCounting();
-              });
-            </script>
           </div>
         </div>
+
+        <!-- Script untuk animasi counting -->
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            // Fungsi untuk memeriksa apakah elemen dalam tampilan
+            function isInViewport(element) {
+              const rect = element.getBoundingClientRect();
+              return rect.top >= 0 && rect.left >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && rect.right <= (window.innerWidth || document.documentElement.clientWidth);
+            }
+
+            // Fungsi untuk animasi counting
+            function startCounting() {
+              const counters = document.querySelectorAll(".count-up");
+              const speed = 70; // Semakin kecil semakin cepat
+
+              counters.forEach((counter) => {
+                if (!counter.dataset.counted && isInViewport(counter)) {
+                  counter.dataset.counted = true;
+                  const target = parseInt(counter.getAttribute("data-target"));
+                  let count = 0;
+
+                  // Sesuaikan increment berdasarkan target
+                  let increment = target;
+                  if (target > 1000) increment = Math.ceil(target / 50);
+                  else if (target > 100) increment = Math.ceil(target / 25);
+                  else increment = 1;
+
+                  const updateCount = () => {
+                    if (count < target) {
+                      count += increment;
+                      // Pastikan tidak melebihi target
+                      if (count > target) count = target;
+
+                      // Format untuk ribuan
+                      if (target >= 1000) {
+                        counter.innerText = count >= 1000 ? count / 1000 + "k" : count;
+                      } else {
+                        counter.innerText = count;
+                      }
+
+                      setTimeout(updateCount, speed);
+                    }
+                  };
+
+                  updateCount();
+                }
+              });
+            }
+
+            // Mulai counting saat scroll
+            window.addEventListener("scroll", startCounting);
+
+            // Jalankan sekali saat halaman dimuat
+            startCounting();
+          });
+        </script>
       </div>
     </section>
 
@@ -488,9 +491,13 @@
     </section>
 
     <!-- Our Services Section -->
-    <section id="services" class="py-16 px-4 bg-gray-50">
-      <div class="container mx-auto">
-        <div class="text-center mb-12">
+    <section id="services" class="py-20 bg-gray-50 relative overflow-hidden">
+      <!-- Add decorative elements to match the Vision & Mission section -->
+      <div class="absolute top-0 right-0 w-64 h-64 bg-primary-green opacity-5 rounded-full -mr-32 -mt-32"></div>
+      <div class="absolute bottom-0 left-0 w-64 h-64 bg-primary-brown opacity-5 rounded-full -ml-32 -mb-32"></div>
+      
+      <div class="container mx-auto px-4 sm:px-6 lg:px-20">
+        <div class="text-center mb-16">
           <div class="section-title-wrapper">
             <div class="section-title-icon">
               <i class="fas fa-hands-helping"></i>
@@ -548,28 +555,6 @@
               <p class="text-gray-600 text-center">Assistance with organic certification processes and compliance with sustainable practices.</p>
             </div>
           </div>
-
-          <!-- Service 5 -->
-          <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:transform hover:scale-105">
-            <div class="p-6">
-              <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-4 mx-auto">
-                <i class="fas fa-chalkboard-teacher text-2xl text-primary-green"></i>
-              </div>
-              <h3 class="text-xl font-semibold mb-3 text-primary-green text-center">Training Programs</h3>
-              <p class="text-gray-600 text-center">Educational workshops and training sessions on eco-friendly farming techniques.</p>
-            </div>
-          </div>
-
-          <!-- Service 6 -->
-          <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:transform hover:scale-105">
-            <div class="p-6">
-              <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-4 mx-auto">
-                <i class="fas fa-recycle text-2xl text-primary-green"></i>
-              </div>
-              <h3 class="text-xl font-semibold mb-3 text-primary-green text-center">Waste Management Solutions</h3>
-              <p class="text-gray-600 text-center">Innovative solutions for agricultural waste recycling and sustainable waste management.</p>
-            </div>
-          </div>
         </div>
 
         <div class="mt-12 text-center">
@@ -609,7 +594,7 @@
             <div class="p-6 md:p-8 border-t border-gray-100">
               <div class="flex items-center mb-2">
                 <h3 class="text-xl md:text-2xl font-semibold text-primary-brown">Goat Manure - Coarse</h3>
-                <span class="ml-auto bg-gray-100 text-primary-green font-bold py-1 px-3 rounded-lg">Rp 7.478,50/Kg</span>
+                <span class="ml-auto bg-gray-100 text-primary-green font-bold py-1 px-3 rounded-lg">Rp 5.982,8/Kg</span>
               </div>
 
               <div class="flex items-center mb-4 text-sm text-gray-500">
@@ -679,7 +664,7 @@
             <div class="p-6 md:p-8 border-t border-gray-100">
               <div class="flex items-center mb-2">
                 <h3 class="text-xl md:text-2xl font-semibold text-primary-brown">Cocopeat - Coarse</h3>
-                <span class="ml-auto bg-gray-100 text-primary-green font-bold py-1 px-3 rounded-lg">Rp 7.478,50/Kg</span>
+                <span class="ml-auto bg-gray-100 text-primary-green font-bold py-1 px-3 rounded-lg">Rp 5.982,8/Kg</span>
               </div>
 
               <div class="flex items-center mb-4 text-sm text-gray-500">
@@ -748,7 +733,7 @@
             <div class="p-6 md:p-8 border-t border-gray-100">
               <div class="flex items-center mb-2">
                 <h3 class="text-xl md:text-2xl font-semibold text-primary-brown">Lembang - Soil</h3>
-                <span class="ml-auto bg-gray-100 text-primary-green font-bold py-1 px-3 rounded-lg">Rp 5.168,50 /Kg</span>
+                <span class="ml-auto bg-gray-100 text-primary-green font-bold py-1 px-3 rounded-lg">Rp 5.168,50/Kg</span>
               </div>
 
               <div class="flex items-center mb-4 text-sm text-gray-500">
@@ -859,17 +844,9 @@
               <div class="mobile-gallery-slide min-w-full px-2">
                 <img src="img/18.jpg" alt="18" class="w-full h-64 object-cover rounded-lg shadow-md" />
               </div>
-              <div class="mobile-gallery-slide min-w-full px-2">
-                <img src="img/2.jpg" alt="2" class="w-full h-64 object-cover rounded-lg shadow-md" />
-              </div>
+
               <div class="mobile-gallery-slide min-w-full px-2">
                 <img src="img/3.jpg" alt="3" class="w-full h-64 object-cover rounded-lg shadow-md" />
-              </div>
-              <div class="mobile-gallery-slide min-w-full px-2">
-                <img src="img/4.jpg" alt="4" class="w-full h-64 object-cover rounded-lg shadow-md" />
-              </div>
-              <div class="mobile-gallery-slide min-w-full px-2">
-                <img src="img/5.jpg" alt="5" class="w-full h-64 object-cover rounded-lg shadow-md" />
               </div>
               <div class="mobile-gallery-slide min-w-full px-2">
                 <img src="img/6.jpg" alt="6" class="w-full h-64 object-cover rounded-lg shadow-md" />
@@ -877,12 +854,8 @@
               <div class="mobile-gallery-slide min-w-full px-2">
                 <img src="img/9.jpg" alt="9" class="w-full h-64 object-cover rounded-lg shadow-md" />
               </div>
-              <div class="mobile-gallery-slide min-w-full px-2">
-                <img src="img/Aglaonema.jpg" alt="Aglaonema" class="w-full h-64 object-cover rounded-lg shadow-md" />
-              </div>
-              <div class="mobile-gallery-slide min-w-full px-2">
-                <img src="img/Fine-Organic-Manure.jpg" alt="Fine Organic Manure" class="w-full h-64 object-cover rounded-lg shadow-md" />
-              </div>
+
+
             </div>
           </div>
 
@@ -922,16 +895,7 @@
             <img src="img/18.jpg" alt="18" class="w-full h-64 object-cover rounded-lg cursor-pointer shadow-md hover:shadow-lg transition" />
           </div>
           <div class="gallery-item">
-            <img src="img/2.jpg" alt="2" class="w-full h-64 object-cover rounded-lg cursor-pointer shadow-md hover:shadow-lg transition" />
-          </div>
-          <div class="gallery-item">
             <img src="img/3.jpg" alt="3" class="w-full h-64 object-cover rounded-lg cursor-pointer shadow-md hover:shadow-lg transition" />
-          </div>
-          <div class="gallery-item">
-            <img src="img/4.jpg" alt="4" class="w-full h-64 object-cover rounded-lg cursor-pointer shadow-md hover:shadow-lg transition" />
-          </div>
-          <div class="gallery-item">
-            <img src="img/5.jpg" alt="5" class="w-full h-64 object-cover rounded-lg cursor-pointer shadow-md hover:shadow-lg transition" />
           </div>
           <div class="gallery-item">
             <img src="img/6.jpg" alt="6" class="w-full h-64 object-cover rounded-lg cursor-pointer shadow-md hover:shadow-lg transition" />
@@ -939,21 +903,7 @@
           <div class="gallery-item">
             <img src="img/9.jpg" alt="9" class="w-full h-64 object-cover rounded-lg cursor-pointer shadow-md hover:shadow-lg transition" />
           </div>
-          <div class="gallery-item">
-            <img src="img/Aglaonema.jpg" alt="Aglaonema" class="w-full h-64 object-cover rounded-lg cursor-pointer shadow-md hover:shadow-lg transition" />
-          </div>
-          <div class="gallery-item">
-            <img src="img/Fine-Organic-Manure.jpg" alt="Fine Organic Manure" class="w-full h-64 object-cover rounded-lg cursor-pointer shadow-md hover:shadow-lg transition" />
-          </div>
-          <div class="gallery-item">
-            <img src="img/Monstera.jpg" alt="Monstera" class="w-full h-64 object-cover rounded-lg cursor-pointer shadow-md hover:shadow-lg transition" />
-          </div>
-          <div class="gallery-item">
-            <img src="img/chili.jpg" alt="chili" class="w-full h-64 object-cover rounded-lg cursor-pointer shadow-md hover:shadow-lg transition" />
-          </div>
-          <div class="gallery-item">
-            <img src="img/cocoa.jpg" alt="cocoa" class="w-full h-64 object-cover rounded-lg cursor-pointer shadow-md hover:shadow-lg transition" />
-          </div>
+
           <div class="gallery-item">
             <img src="img/cocobit halus(1).jpg" alt="cocobit halus(1)" class="w-full h-64 object-cover rounded-lg cursor-pointer shadow-md hover:shadow-lg transition" />
           </div>
@@ -975,35 +925,10 @@
           <div class="gallery-item">
             <img src="img/gudang.jpg" alt="gudang" class="w-full h-64 object-cover rounded-lg cursor-pointer shadow-md hover:shadow-lg transition" />
           </div>
-          <div class="gallery-item">
-            <img src="img/home.png" alt="home" class="w-full h-64 object-cover rounded-lg cursor-pointer shadow-md hover:shadow-lg transition" />
-          </div>
-          <div class="gallery-item">
-            <img src="img/orange.jpg" alt="orange" class="w-full h-64 object-cover rounded-lg cursor-pointer shadow-md hover:shadow-lg transition" />
-          </div>
-          <div class="gallery-item">
-            <img src="img/palm-oil (1).jpg" alt="palm-oil (1)" class="w-full h-64 object-cover rounded-lg cursor-pointer shadow-md hover:shadow-lg transition" />
-          </div>
+
+
           <div class="gallery-item">
             <img src="img/prss_frmnts_thikmbng2.jpg" alt="prss_frmnts_thikmbng2" class="w-full h-64 object-cover rounded-lg cursor-pointer shadow-md hover:shadow-lg transition" />
-          </div>
-          <div class="gallery-item">
-            <img src="img/service1.jpg" alt="service1" class="w-full h-64 object-cover rounded-lg cursor-pointer shadow-md hover:shadow-lg transition" />
-          </div>
-          <div class="gallery-item">
-            <img src="img/tanaman.jpg" alt="tanaman" class="w-full h-64 object-cover rounded-lg cursor-pointer shadow-md hover:shadow-lg transition" />
-          </div>
-          <div class="gallery-item">
-            <img src="img/tnhtnggn.jpeg" alt="tnhtnggn" class="w-full h-64 object-cover rounded-lg cursor-pointer shadow-md hover:shadow-lg transition" />
-          </div>
-          <div class="gallery-item">
-            <img src="img/tomato.jpg" alt="tomato" class="w-full h-64 object-cover rounded-lg cursor-pointer shadow-md hover:shadow-lg transition" />
-          </div>
-          <div class="gallery-item">
-            <img src="img/upscalemedia-transformed.png" alt="upscalemedia-transformed" class="w-full h-64 object-cover rounded-lg cursor-pointer shadow-md hover:shadow-lg transition" />
-          </div>
-          <div class="gallery-item">
-            <img src="img/visimisi.jpg" alt="visimisi" class="w-full h-64 object-cover rounded-lg cursor-pointer shadow-md hover:shadow-lg transition" />
           </div>
         </div>
       </div>
